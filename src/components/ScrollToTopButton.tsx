@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaAngleUp } from "react-icons/fa6";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,13 +29,13 @@ const ScrollToTopButton = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 z-[99] w-12 h-12 rounded-full bg-primary-color text-primary-light-1 flex items-center justify-center transition-all duration-300 ${
+      className={`fixed bottom-8 right-8 z-[99] w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center transition-all duration-300 ${
         isVisible ? "" : "is-hided"
       }`}
       data-web-trigger="scroll-top"
       aria-label="Scroll to top"
     >
-      <i className="lni lni-chevron-up"></i>
+      <FaAngleUp />
     </button>
   );
 };

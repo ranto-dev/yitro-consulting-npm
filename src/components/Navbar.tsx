@@ -136,7 +136,11 @@ const Navbar = () => {
                 aria-label="Switch theme"
                 onClick={toggleTheme}
               >
-                {theme === "dark" ? <FaMoon /> : <FaSun />}
+                {theme === "dark" ? (
+                  <FaMoon className={isSticky ? "text-primary" : ""} />
+                ) : (
+                  <FaSun className={isSticky ? "text-black" : ""} />
+                )}
               </button>
               <div className="hidden sm:flex">
                 <a
