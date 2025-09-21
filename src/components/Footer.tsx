@@ -1,3 +1,5 @@
+import { FaLocationArrow } from "react-icons/fa6";
+
 const Footer = () => {
   return (
     <footer className="relative z-10 bg-body-light-1 dark:bg-body-dark-12/10 pt-20 lg:pt-24 pb-8 border-t border-body-light-6 dark:border-body-dark-6">
@@ -141,7 +143,7 @@ const Footer = () => {
                 type="submit"
                 className="rounded-r-md px-6 bg-primary text-primary-color hover:bg-primary-light-10 dark:hover:bg-primary-dark-10"
               >
-                <i className="lni lni-arrow-right"></i>
+                <FaLocationArrow />
               </button>
             </form>
           </div>

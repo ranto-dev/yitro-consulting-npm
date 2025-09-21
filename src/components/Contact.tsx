@@ -1,3 +1,5 @@
+import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
+
 const Contact = () => {
   return (
     <section id="contact" className="section-area">
@@ -79,19 +81,19 @@ const Contact = () => {
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">
-                  <i className="lni lni-map-marker text-primary text-xl mt-1"></i>
+                  <FaLocationDot />
                   <p className="text-body-light-11 dark:text-body-dark-11">
                     Lot 1111-G305 Tsivatrinikamo, Antsirabe 110, Madagascar
                   </p>
                 </li>
                 <li className="flex items-start gap-4">
-                  <i className="lni lni-envelope text-primary text-xl mt-1"></i>
+                  <FaEnvelope />
                   <p className="text-body-light-11 dark:text-body-dark-11">
                     sk.yitro-consulting@gmail.com
                   </p>
                 </li>
                 <li className="flex items-start gap-4">
-                  <i className="lni lni-phone-handset text-primary text-xl mt-1"></i>
+                  <FaPhone />
                   <p className="text-body-light-11 dark:text-body-dark-11">
                     +261 34 92 510 45 / +261 34 53 313 87
                   </p>

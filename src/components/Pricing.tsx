@@ -1,3 +1,5 @@
+import { FaRegCircleCheck } from "react-icons/fa6";
+
 const pricingPlans = [
   {
     title: "Starter",
@@ -114,13 +116,13 @@ const Pricing = () => {
                         key={idx}
                         className="text-left relative mb-3 inline-flex gap-3 w-full"
                       >
-                        <i
-                          className={`lni lni-checkmark-circle text-base leading-[24px] ${
+                        <FaRegCircleCheck
+                          className={`text-base leading-[24px] ${
                             feature.included
                               ? "text-primary"
                               : "text-body-light-11 dark:text-body-dark-11"
                           }`}
-                        ></i>
+                        />
                         <span>{feature.text}</span>
                       </li>
                     ))}

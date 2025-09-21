@@ -1,3 +1,4 @@
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 import avatar1 from "../assets/img/avatar/avatar-1.jpg";
 import avatar2 from "../assets/img/avatar/avatar-2.jpg";
 import avatar3 from "../assets/img/avatar/avatar-3.jpg";
@@ -53,19 +54,19 @@ const Team = () => {
                       href="javascript:void(0)"
                       className="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
                     >
-                      <i className="lni lni-facebook-fill"></i>
+                      <FaFacebook />
                     </a>
                     <a
                       href="javascript:void(0)"
                       className="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
                     >
-                      <i className="lni lni-twitter-original"></i>
+                      <FaTwitter />
                     </a>
                     <a
                       href="javascript:void(0)"
                       className="text-body-light-10 dark:text-body-dark-10 hover:text-primary"
                     >
-                      <i className="lni lni-instagram-original"></i>
+                      <FaInstagram />
                     </a>
                   </div>
                 </figcaption>

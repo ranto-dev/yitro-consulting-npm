@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaMoon, FaSun } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,9 +79,7 @@ const Navbar = () => {
       <div className="container">
         <div className="ic-navbar-container relative -mx-5 flex items-center justify-between">
           <div className="w-60 lg:w-56 max-w-full px-5">
-            <p
-              className="ic-navbar-logo block w-full text-5xl font-semibold py-5 text-primary-color"
-            >
+            <p className="ic-navbar-logo block w-full text-5xl font-semibold py-5 text-primary-color">
               Yitro-consulting
             </p>
           </div>
@@ -137,9 +136,7 @@ const Navbar = () => {
                 aria-label="Switch theme"
                 onClick={toggleTheme}
               >
-                <i
-                  className={theme === "dark" ? "lni lni-night" : "lni lni-sun"}
-                ></i>
+                {theme === "dark" ? <FaMoon /> : <FaSun />}
               </button>
               <div className="hidden sm:flex">
                 <a

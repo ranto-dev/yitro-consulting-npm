@@ -5,6 +5,7 @@ import portfolio3 from "../assets/img/portfolio/portfolio-3.jpg";
 import portfolio4 from "../assets/img/portfolio/portfolio-4.jpg";
 import portfolio5 from "../assets/img/portfolio/portfolio-5.jpg";
 import portfolio6 from "../assets/img/portfolio/portfolio-6.jpg";
+import { FaLink, FaMagnifyingGlassPlus } from "react-icons/fa6";
 
 const portfolioItems = [
   {
@@ -111,7 +112,7 @@ const Portfolio = () => {
                           href={item.image}
                           className="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center hover:bg-primary-light-10 hover:text-primary-color dark:hover:bg-primary-dark-10 dark:hover:text-primary-color focus:bg-primary-light-10 focus:text-primary-color dark:focus:bg-primary-dark-10 dark:focus-text-primary-color"
                         >
-                          <i className="lni lni-zoom-in"></i>
+                          <FaMagnifyingGlassPlus />
                         </a>
                       </div>
                       <div className="portfolio-icon">
@@ -119,7 +120,7 @@ const Portfolio = () => {
                           href="javascript:void(0)"
                           className="text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center hover:bg-primary-light-10 hover:text-primary-color dark:hover:bg-primary-dark-10 dark:hover:text-primary-color focus:bg-primary-light-10 focus:text-primary-color dark:focus-bg-primary-dark-10 dark:focus-text-primary-color"
                         >
-                          <i className="lni lni-link"></i>
+                          <FaLink />
                         </a>
                       </div>
                     </div>

@@ -1,5 +1,6 @@
 import heroImage from "../assets/img/hero.jpg";
 import dots from "../assets/img/dots.svg";
+import { FaPlay } from "react-icons/fa6";
 
 const Hero = () => {
   return (
@@ -36,7 +37,7 @@ const Hero = () => {
                     className="video-popup flex items-center gap-4 rounded-md bg-primary-color/[0.15] px-5 py-3 text-base font-medium text-primary-color hover:bg-primary-color hover:text-primary md:px-7 md:py-[14px]"
                     role="button"
                   >
-                    <i className="lni lni-play text-lg/none"></i> Watch Intro
+                    <FaPlay /> Watch Intro
                   </a>
                 </li>
               </ul>
