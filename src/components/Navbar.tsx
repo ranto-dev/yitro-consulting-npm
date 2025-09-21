@@ -78,12 +78,11 @@ const Navbar = () => {
       <div className="container">
         <div className="ic-navbar-container relative -mx-5 flex items-center justify-between">
           <div className="w-60 lg:w-56 max-w-full px-5">
-            <a
-              href="."
-              className="ic-navbar-logo block w-full py-5 text-primary-color"
+            <p
+              className="ic-navbar-logo block w-full text-5xl font-semibold py-5 text-primary-color"
             >
-              {/* SVG du logo */}
-            </a>
+              Yitro-consulting
+            </p>
           </div>
           <div className="flex w-full items-center justify-between px-5">
             <div>
@@ -105,7 +104,7 @@ const Navbar = () => {
                 }`}
               >
                 <ul
-                  className="block lg:flex"
+                  className="block lg:flex gap-8"
                   role="menu"
                   aria-label="Navigation menu"
                 >

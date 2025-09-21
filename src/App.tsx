@@ -11,7 +11,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simule la fin du chargement après 1 seconde
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
@@ -43,14 +42,14 @@ function App() {
       )}
 
       <Navbar />
-      <main className="main relative">
+      <div className="main relative">
         <Hero />
         <About />
         <Services />
         <IntroVideo />
         <Portfolio />
         {/* Ajoutez d'autres sections ici (Pricing, Team, Contact, Footer) */}
-      </main>
+      </div>
       <ScrollToTopButton />
     </>
   );
