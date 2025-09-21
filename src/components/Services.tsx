@@ -51,7 +51,7 @@ const Services = () => {
             the majority have suffered alteration in some form.
           </p>
         </div>
-        <div className="row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={index}

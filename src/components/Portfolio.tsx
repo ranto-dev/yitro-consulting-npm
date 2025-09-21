@@ -2,6 +2,9 @@ import { useState } from "react";
 import portfolio1 from "../assets/img/portfolio/portfolio-1.jpg";
 import portfolio2 from "../assets/img/portfolio/portfolio-2.jpg";
 import portfolio3 from "../assets/img/portfolio/portfolio-3.jpg";
+import portfolio4 from "../assets/img/portfolio/portfolio-4.jpg";
+import portfolio5 from "../assets/img/portfolio/portfolio-5.jpg";
+import portfolio6 from "../assets/img/portfolio/portfolio-6.jpg";
 
 const portfolioItems = [
   {
@@ -16,7 +19,7 @@ const portfolioItems = [
     title: "Web Development",
     description:
       "Short description for the ones who look for something new. Awesome!",
-    filter: "research",
+    filter: "planning",
   },
   {
     image: portfolio3,
@@ -25,7 +28,27 @@ const portfolioItems = [
       "Short description for the ones who look for something new. Awesome!",
     filter: "marketing",
   },
-  // Ajoutez d'autres éléments ici
+  {
+    image: portfolio4,
+    title: "Digital Marketing",
+    description:
+      "Short description for the ones who look for something new. Awesome!!",
+    filter: "marketing",
+  },
+  {
+    image: portfolio5,
+    title: "SEO Services",
+    description:
+      "Short description for the ones who look for something new. Awesome!",
+    filter: "marketing",
+  },
+  {
+    image: portfolio6,
+    title: "Product Design",
+    description:
+      "Short description for the ones who look for something new. Awesome!",
+    filter: "branding",
+  },
 ];
 
 const Portfolio = () => {
@@ -50,7 +73,7 @@ const Portfolio = () => {
           </p>
         </div>
         <nav
-          className="scroll-revealed portfolio-menu mb-[3.750rem] text-center"
+          className=" flex gap-2 flex-wrap justify-center items-center py-4"
           aria-label="Portfolio filter"
         >
           {["all", "branding", "marketing", "planning", "research"].map(

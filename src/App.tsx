@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -6,6 +6,12 @@ import Services from "./components/Services";
 import IntroVideo from "./components/IntroVideo";
 import Portfolio from "./components/Portfolio";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import Pricing from "./components/Pricing";
+import CallToAction from "./components/CallToAction";
+import Team from "./components/Team";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+// import Testimonials from "./components/Testimonials";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,8 +54,13 @@ function App() {
         <Services />
         <IntroVideo />
         <Portfolio />
-        {/* Ajoutez d'autres sections ici (Pricing, Team, Contact, Footer) */}
+        <Pricing />
+        <CallToAction />
+        <Team />
+        {/* <Testimonials /> */}
+        <Contact />
       </div>
+      <Footer />
       <ScrollToTopButton />
     </>
   );

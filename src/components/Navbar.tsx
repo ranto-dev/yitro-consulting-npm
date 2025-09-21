@@ -119,7 +119,7 @@ const Navbar = () => {
                     <li key={index} className="group relative">
                       <a
                         href={`#${item.toLowerCase()}`}
-                        className="ic-page-scroll mx-8 flex py-2 text-base font-medium text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mx-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70"
+                        className="ic-page-scroll mx-8 flex py-2 text-base text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mx-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70"
                         role="menuitem"
                         onClick={handleLinkClick}
                       >
