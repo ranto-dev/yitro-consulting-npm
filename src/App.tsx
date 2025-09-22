@@ -11,6 +11,7 @@ import CallToAction from "./components/CallToAction";
 import Team from "./components/Team";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Blog from "./components/Blog";
 // import Testimonials from "./components/Testimonials";
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <CallToAction />
         <Team />
         {/* <Testimonials /> */}
+        <Blog />
         <Contact />
       </div>
       <Footer />
