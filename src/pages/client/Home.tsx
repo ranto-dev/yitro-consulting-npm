@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import Navbar from "../../components/Navbar";
-import Hero from "../../components/Hero";
-import About from "../../components/About";
-import Services from "../../components/Services";
-import IntroVideo from "../../components/IntroVideo";
-import Portfolio from "../../components/Portfolio";
-import Pricing from "../../components/Pricing";
-import CallToAction from "../../components/CallToAction";
-import Team from "../../components/Team";
-import Blog from "../../components/Blog";
-import Contact from "../../components/Contact";
-import Footer from "../../components/Footer";
-import ScrollToTopButton from "../../components/ScrollToTopButton";
+import Navbar from "../../components/home/Navbar";
+import Hero from "../../components/home/Hero";
+import About from "../../components/home/About";
+import Services from "../../components/home/Services";
+import IntroVideo from "../../components/home/IntroVideo";
+import Portfolio from "../../components/home/Portfolio";
+import Pricing from "../../components/home/Pricing";
+import CallToAction from "../../components/home/CallToAction";
+import Team from "../../components/home/Team";
+import Blog from "../../components/home/Blog";
+import Contact from "../../components/home/Contact";
+import Footer from "../../components/home/Footer";
+import ScrollToTopButton from "../../components/home/ScrollToTopButton";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);

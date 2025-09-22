@@ -5,11 +5,8 @@ import type { BlogPost } from "../../types/BlogPost";
 import blog1 from "../../assets/img/thumbnail/thumbnail-1.jpg";
 import blog2 from "../../assets/img/thumbnail/thumbnail-2.jpg";
 import blog3 from "../../assets/img/thumbnail/thumbnail-3.jpg";
-import NavbarBlog from "../../components/blog/Navbar";
-import HeroBlog from "../../components/blog/Hero";
-import Content from "../../components/blog/Content";
 
-const AllBlogs: React.FC = () => {
+const Content: React.FC = () => {
   const [blogPosts] = useState<BlogPost[]>([
     {
       id: 1,
@@ -48,11 +45,41 @@ const AllBlogs: React.FC = () => {
 
   return (
     <>
-      <NavbarBlog />
-      <HeroBlog />
-      <Content />
+      <div className="w-[75%] m-auto py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {blogPosts.map((post: BlogPost) => (
+          <div
+            key={post.id}
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 ease-in-out"
+          >
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <span className="text-sm text-gray-500 uppercase font-semibold">
+                {post.category}
+              </span>
+              <h2 className="text-xl font-bold my-2">{post.title}</h2>
+              <p className="text-gray-600 text-sm">{post.excerpt}</p>
+              <div className="flex justify-between items-center mt-4 text-sm text-gray-400">
+                <span>By {post.author}</span>
+                <span>{post.date}</span>
+              </div>
+              <div className="mt-4">
+                <Link
+                  to={post.link}
+                  className="inline-block text-indigo-600 hover:text-indigo-800 transition font-medium"
+                >
+                  Read More →
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 };
 
-export default AllBlogs;
+export default Content;

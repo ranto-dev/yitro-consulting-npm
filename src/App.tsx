@@ -1,4 +1,4 @@
-import Blog from "./pages/client/Blog";
+import AllBlogs from "./pages/client/Blog";
 import Home from "./pages/client/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -16,7 +16,7 @@ export default function App() {
       path: "/blog",
       element: (
         <>
-          <Blog />
+          <AllBlogs />
         </>
       ),
     },

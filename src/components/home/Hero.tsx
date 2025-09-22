@@ -1,5 +1,5 @@
-import heroImage from "../assets/img/hero.jpg";
-import dots from "../assets/img/dots.svg";
+import heroImage from "../../assets/img/hero.jpg";
+import dots from "../../assets/img/dots.svg";
 import { FaPlay } from "react-icons/fa6";
 
 const Hero = () => {

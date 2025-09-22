@@ -1,7 +1,7 @@
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
-import avatar1 from "../assets/img/avatar/avatar-1.jpg";
-import avatar2 from "../assets/img/avatar/avatar-2.jpg";
-import avatar3 from "../assets/img/avatar/avatar-3.jpg";
+import avatar1 from "../../assets/img/avatar/avatar-1.jpg";
+import avatar2 from "../../assets/img/avatar/avatar-2.jpg";
+import avatar3 from "../../assets/img/avatar/avatar-3.jpg";
 
 const teamMembers = [
   { name: "Lai Yeves", role: "Digital marketing", image: avatar1 },

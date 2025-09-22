@@ -1,10 +1,10 @@
 import { useState } from "react";
-import portfolio1 from "../assets/img/portfolio/portfolio-1.jpg";
-import portfolio2 from "../assets/img/portfolio/portfolio-2.jpg";
-import portfolio3 from "../assets/img/portfolio/portfolio-3.jpg";
-import portfolio4 from "../assets/img/portfolio/portfolio-4.jpg";
-import portfolio5 from "../assets/img/portfolio/portfolio-5.jpg";
-import portfolio6 from "../assets/img/portfolio/portfolio-6.jpg";
+import portfolio1 from "../../assets/img/portfolio/portfolio-1.jpg";
+import portfolio2 from "../../assets/img/portfolio/portfolio-2.jpg";
+import portfolio3 from "../../assets/img/portfolio/portfolio-3.jpg";
+import portfolio4 from "../../assets/img/portfolio/portfolio-4.jpg";
+import portfolio5 from "../../assets/img/portfolio/portfolio-5.jpg";
+import portfolio6 from "../../assets/img/portfolio/portfolio-6.jpg";
 import { FaLink, FaMagnifyingGlassPlus } from "react-icons/fa6";
 
 const portfolioItems = [

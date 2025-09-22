@@ -1,5 +1,5 @@
 import { useState } from "react";
-import aboutImage from "../assets/img/about-img.jpg";
+import aboutImage from "../../assets/img/about-img.jpg";
 
 const tabsData = [
   {

@@ -1,5 +1,5 @@
 import { FaPlay } from "react-icons/fa6";
-import introVideoImage from "../assets/img/intro-video.jpg";
+import introVideoImage from "../../assets/img/intro-video.jpg";
 
 const IntroVideo = () => {
   return (

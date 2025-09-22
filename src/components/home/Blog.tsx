@@ -1,20 +1,10 @@
 import { Link } from "react-router-dom";
-import blog1 from "../assets/img/thumbnail/thumbnail-1.jpg";
-import blog2 from "../assets/img/thumbnail/thumbnail-2.jpg";
-import blog3 from "../assets/img/thumbnail/thumbnail-3.jpg";
+import blog1 from "../../assets/img/thumbnail/thumbnail-1.jpg";
+import blog2 from "../../assets/img/thumbnail/thumbnail-2.jpg";
+import blog3 from "../../assets/img/thumbnail/thumbnail-3.jpg";
 import { useState } from "react";
-// import { FaUser } from "react-icons/fa6";
-
-interface BlogPost {
-  id: number;
-  image: string;
-  category: string;
-  title: string;
-  excerpt: string;
-  author: string;
-  date: string;
-  link: string;
-}
+import type { BlogPost } from "../../types/BlogPost";
+import { FaCalendarDay, FaUser } from "react-icons/fa6";
 
 const Blog = () => {
   const [blogPosts] = useState<BlogPost[]>([
@@ -98,11 +88,11 @@ const Blog = () => {
                 </p>
                 <ul className="flex flex-wrap items-center gap-4 text-base text-body-light-11 dark:text-body-dark-11">
                   <li className="flex items-center gap-2">
-                    <i className="lni lni-user text-primary text-xl"></i>
+                    <FaUser className="text-primary text-xl" />
                     <span>by {post.author}</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <i className="lni lni-calendar text-primary text-xl"></i>
+                    <FaCalendarDay className="text-primary text-xl" />
                     <span>{post.date}</span>
                   </li>
                 </ul>
