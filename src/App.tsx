@@ -11,7 +11,7 @@ import CallToAction from "./components/CallToAction";
 import Team from "./components/Team";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-// import Testimonials from "./components/Testimonials";
+import Blog from "./components/Blog";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -58,6 +58,7 @@ function App() {
         <CallToAction />
         <Team />
         {/* <Testimonials /> */}
+        <Blog />
         <Contact />
       </div>
       <Footer />

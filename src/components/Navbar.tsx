@@ -25,21 +25,25 @@ const Navbar = () => {
     };
 
     const handleScrollspy = () => {
-      const links = document.querySelectorAll(".ic-page-scroll");
+      const links =
+        document.querySelectorAll<HTMLAnchorElement>(".ic-page-scroll");
       const scrollpos =
         window.pageYOffset || document.documentElement.scrollTop;
 
       links.forEach((link) => {
-        const targetElement = document.querySelector(link.getAttribute("href"));
-        if (targetElement) {
-          const topminus = scrollpos + 74;
-          if (
-            targetElement.offsetTop <= topminus &&
-            targetElement.offsetTop + targetElement.offsetHeight > topminus
-          ) {
-            link.classList.add("active");
-          } else {
-            link.classList.remove("active");
+        const href = link.getAttribute("href");
+        if (href) {
+          const targetElement = document.querySelector<HTMLElement>(href);
+          if (targetElement) {
+            const topminus = scrollpos + 74;
+            if (
+              targetElement.offsetTop <= topminus &&
+              targetElement.offsetTop + targetElement.offsetHeight > topminus
+            ) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
           }
         }
       });
@@ -58,12 +62,15 @@ const Navbar = () => {
     document.documentElement.dataset.webTheme = theme;
   }, [theme]);
 
-  const handleLinkClick = (e) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const href = e.target.getAttribute("href");
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    const href = e.currentTarget.getAttribute("href");
+
+    if (href) {
+      const targetElement = document.querySelector<HTMLElement>(href);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
     setIsMenuOpen(false);
   };
@@ -113,6 +120,7 @@ const Navbar = () => {
                     "Portfolio",
                     "Pricing",
                     "Team",
+                    "Blog",
                     "Contact",
                   ].map((item, index) => (
                     <li key={index} className="group relative">
