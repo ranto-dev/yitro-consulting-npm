@@ -1,5 +1,8 @@
 import { FaRegCircleCheck } from "react-icons/fa6";
-
+import traduction from "../../../public/traduction/traduction.json";
+interface lang {
+  lang: string
+}
 const pricingPlans = [
   {
     title: "Starter",
@@ -45,7 +48,7 @@ const pricingPlans = [
   },
 ];
 
-const Pricing = () => {
+const Pricing = ({lang}: lang) => {
   return (
     <section id="pricing" className="section-area">
       <div className="container">

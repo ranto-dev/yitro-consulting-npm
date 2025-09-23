@@ -55,10 +55,10 @@ export default function Home() {
       <div className="main relative">
         <Hero lang={lang}/>
         <About lang={lang}/>
-        <Services />
-        <IntroVideo />
-        <Portfolio />
-        <Pricing />
+        <Services lang={lang}/>
+        <IntroVideo lang={lang}/>
+        <Portfolio lang={lang}/>
+        <Pricing lang={lang}/>
         <CallToAction />
         <Team />
         <Blog />
