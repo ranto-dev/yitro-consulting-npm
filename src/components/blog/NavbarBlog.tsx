@@ -2,13 +2,8 @@ import { useState, useEffect } from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
 
 const NavbarBlog = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [theme, setTheme] = useState("light");
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -24,37 +19,10 @@ const NavbarBlog = () => {
       setIsSticky(window.scrollY >= 72);
     };
 
-    const handleScrollspy = () => {
-      const links =
-        document.querySelectorAll<HTMLAnchorElement>(".ic-page-scroll");
-      const scrollpos =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      links.forEach((link) => {
-        const href = link.getAttribute("href");
-        if (href) {
-          const targetElement = document.querySelector<HTMLElement>(href);
-          if (targetElement) {
-            const topminus = scrollpos + 74;
-            if (
-              targetElement.offsetTop <= topminus &&
-              targetElement.offsetTop + targetElement.offsetHeight > topminus
-            ) {
-              link.classList.add("active");
-            } else {
-              link.classList.remove("active");
-            }
-          }
-        }
-      });
-    };
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scroll", handleScrollspy);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll", handleScrollspy);
     };
   }, []);
 
@@ -83,12 +51,47 @@ const NavbarBlog = () => {
       role="banner"
       aria-label="Navigation bar"
     >
-      <div className="container">
+      <div className="container flex">
         <div className="ic-navbar-container relative -mx-5 flex items-center justify-between">
           <div className="w-60 lg:w-56 max-w-full px-5">
             <p className="ic-navbar-logo block w-full text-5xl font-semibold py-5 text-primary-color">
               Yitro-consulting
             </p>
+          </div>
+        </div>
+        <div className="flex w-full items-center justify-between px-5">
+          <div>
+            <nav
+              id="navbarMenu"
+              className={`ic-navbar-collapse absolute right-4 top-[80px] w-full max-w-[250px] rounded-lg bg-primary-light-1 py-5 shadow-lg dark:bg-primary-dark-1 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6`}
+            >
+              <ul
+                className="block lg:flex gap-8"
+                role="menu"
+                aria-label="Navigation menu"
+              >
+                {[
+                  "Home",
+                  "Services",
+                  "Portfolio",
+                  "Pricing",
+                  "Team",
+                  "Blog",
+                  "Contact",
+                ].map((item, index) => (
+                  <li key={index} className="group relative">
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="ic-page-scroll mx-8 flex py-2 text-base text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mx-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70"
+                      role="menuitem"
+                      onClick={handleLinkClick}
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
           <div>
             <div className="flex items-center justify-end pr-[52px] lg:pr-0">
@@ -104,15 +107,6 @@ const NavbarBlog = () => {
                   <FaSun className={isSticky ? "text-black" : ""} />
                 )}
               </button>
-              <div className="hidden sm:flex">
-                <a
-                  href="javascript:void(0)"
-                  className="btn-navbar ml-5 px-6 py-3 rounded-md bg-primary-color bg-opacity-20 text-base font-medium text-primary-color hover:bg-opacity-100 hover:text-primary"
-                  role="button"
-                >
-                  New blog
-                </a>
-              </div>
             </div>
           </div>
         </div>

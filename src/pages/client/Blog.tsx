@@ -5,8 +5,8 @@ import type { BlogPost } from "../../types/BlogPost";
 import blog1 from "../../assets/img/thumbnail/thumbnail-1.jpg";
 import blog2 from "../../assets/img/thumbnail/thumbnail-2.jpg";
 import blog3 from "../../assets/img/thumbnail/thumbnail-3.jpg";
-import NavbarBlog from "../../components/blog/Navbar";
-import HeroBlog from "../../components/blog/Hero";
+import NavbarBlog from "../../components/blog/NavbarBlog";
+import HeroBlog from "../../components/blog/HeroBlog";
 import Content from "../../components/blog/Content";
 
 const AllBlogs: React.FC = () => {

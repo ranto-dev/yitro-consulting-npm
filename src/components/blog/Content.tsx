@@ -44,8 +44,11 @@ const Content: React.FC = () => {
   ]);
 
   return (
-    <>
-      <div className="w-[75%] m-auto py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="flex flex-row gap-4 justify-around items-start p-4">
+      <div className="w-[45%]">
+        <h1 className="text-xl">Filter</h1>
+      </div>
+      <div className="w-full flex flex-col gap-4">
         {blogPosts.map((post: BlogPost) => (
           <div
             key={post.id}
@@ -78,7 +81,7 @@ const Content: React.FC = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
