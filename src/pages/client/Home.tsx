@@ -59,10 +59,10 @@ export default function Home() {
         <IntroVideo lang={lang}/>
         <Portfolio lang={lang}/>
         <Pricing lang={lang}/>
-        <CallToAction />
-        <Team />
+        <CallToAction lang={lang}/>
+        <Team lang={lang}/>
         <Blog />
-        <Contact />
+        <Contact lang={lang}/>
       </div>
       <Footer />
       <ScrollToTopButton />

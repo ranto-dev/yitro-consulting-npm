@@ -2,7 +2,10 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 import avatar1 from "../../assets/img/avatar/avatar-1.jpg";
 import avatar2 from "../../assets/img/avatar/avatar-2.jpg";
 import avatar3 from "../../assets/img/avatar/avatar-3.jpg";
-
+import traduction from "../../../public/traduction/traduction.json";
+interface lang {
+  lang: string
+}
 const teamMembers = [
   { name: "Lai Yeves", role: "Digital marketing", image: avatar1 },
   { name: "Hasina", role: "Client Support (H/R)", image: avatar2 },
@@ -14,18 +17,23 @@ const teamMembers = [
   { name: "Achina", role: "DevOps", image: avatar3 },
 ];
 
-const Team = () => {
+const Team = ({lang}: lang) => {
   return (
     <section id="team" className="section-area">
       <div className="container">
         <div className="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
           <h6 className="mb-2 block text-lg font-semibold text-primary">
-            Team
+          <>
+              {lang == "eng" && traduction['eng']['team_title']}
+              {lang == "fr" && traduction['fr']['team_title']}
+            </>
           </h6>
           <h2 className="mb-6">Our Creative Team</h2>
           <p>
-            There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form.
+          <>
+              {lang == "eng" && traduction['eng']['team_paragraphe']}
+              {lang == "fr" && traduction['fr']['team_paragraphe']}
+            </>
           </p>
         </div>
 

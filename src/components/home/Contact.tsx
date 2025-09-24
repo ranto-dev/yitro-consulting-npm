@@ -1,6 +1,9 @@
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
-
-const Contact = () => {
+import traduction from "../../../public/traduction/traduction.json";
+interface lang {
+  lang: string
+}
+const Contact = ({ lang }: lang) => {
   return (
     <section id="contact" className="section-area">
       <div className="container">
@@ -8,10 +11,15 @@ const Contact = () => {
           <h6 className="mb-2 block text-lg font-semibold text-primary">
             Contact
           </h6>
-          <h2 className="mb-6">Contact Us</h2>
+          <h2 className="mb-6"><>
+            {lang == "eng" && traduction['eng']['contact_title']}
+            {lang == "fr" && traduction['fr']['contact_title']}
+          </></h2>
           <p>
-            There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form.
+            <>
+              {lang == "eng" && traduction['eng']['contact_paragraphe']}
+              {lang == "fr" && traduction['fr']['contact_paragraphe']}
+            </>
           </p>
         </div>
 
@@ -63,7 +71,10 @@ const Contact = () => {
                     type="submit"
                     className="inline-block font-medium px-6 py-3 rounded-md bg-primary text-primary-color hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 focus:bg-primary-light-10 dark:focus:bg-primary-dark-10"
                   >
-                    Send Message
+                    <>
+                      {lang == "eng" && traduction['eng']['send_btn_msg']}
+                      {lang == "fr" && traduction['fr']['send_btn_msg']}
+                    </>
                   </button>
                 </div>
               </form>
@@ -73,11 +84,16 @@ const Contact = () => {
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <div className="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 p-8 shadow-card-1 hover:shadow-lg">
               <h4 className="text-xl font-semibold text-body-light-12 dark:text-body-dark-12 mb-4">
-                Our Information
+                <>
+                  {lang == "eng" && traduction['eng']['contact_information_title']}
+                  {lang == "fr" && traduction['fr']['contact_information_title']}
+                </>
               </h4>
               <p className="text-body-light-11 dark:text-body-dark-11 mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <>
+                  {lang == "eng" && traduction['eng']['contact_information_paragraphe']}
+                  {lang == "fr" && traduction['fr']['contact_information_paragraphe']}
+                </>
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">

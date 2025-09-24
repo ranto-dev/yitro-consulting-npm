@@ -59,80 +59,82 @@ const Portfolio = ({ lang }: lang) => {
   const [portfolioItems, _] = useState([
     {
       image: portfolio1,
-      title: <>
-      {lang == "eng" && traduction['eng']['portfolio_title_1']}
-      {lang == "fr" && traduction['fr']['portfolio_title_1']}
-    </>,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_1'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_1'] : "")
+      )
+
+      ,
       description:
-      <>
-      {lang == "eng" && traduction['eng']['service_title_1']}
-      {lang == "fr" && traduction['fr']['service_title_1']}
-    </>,
+        <>
+          {lang == "eng" && traduction['eng']['service_title_1']}
+          {lang == "fr" && traduction['fr']['service_title_1']}
+        </>,
       filter: "branding",
     },
     {
       image: portfolio2,
-      title: <>
-      {lang == "eng" && traduction['eng']['portfolio_title_2']}
-      {lang == "fr" && traduction['fr']['portfolio_title_2']}
-    </>,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_2'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_2'] : "")
+      ),
       description:
-      <>
-      {lang == "eng" && traduction['eng']['service_title_2']}
-      {lang == "fr" && traduction['fr']['service_title_2']}
-    </>,
+        <>
+          {lang == "eng" && traduction['eng']['service_title_2']}
+          {lang == "fr" && traduction['fr']['service_title_2']}
+        </>,
       filter: "planning",
     },
     {
       image: portfolio3,
-      title: <>
-      {lang == "eng" && traduction['eng']['portfolio_title_3']}
-      {lang == "fr" && traduction['fr']['portfolio_title_3']}
-    </>,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_3'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_3'] : "")
+      ),
       description:
-      <>
-      {lang == "eng" && traduction['eng']['service_title_3']}
-      {lang == "fr" && traduction['fr']['service_title_3']}
-    </>,
+        <>
+          {lang == "eng" && traduction['eng']['service_title_3']}
+          {lang == "fr" && traduction['fr']['service_title_3']}
+        </>,
       filter: "marketing",
     },
     {
       image: portfolio4,
-      title: <>
-      {lang == "eng" && traduction['eng']['portfolio_title_4']}
-      {lang == "fr" && traduction['fr']['portfolio_title_4']}
-    </>,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_4'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_4'] : "")
+      ),
       description:
-      <>
-      {lang == "eng" && traduction['eng']['service_title_4']}
-      {lang == "fr" && traduction['fr']['service_title_4']}
-    </>,
+        <>
+          {lang == "eng" && traduction['eng']['service_title_4']}
+          {lang == "fr" && traduction['fr']['service_title_4']}
+        </>,
       filter: "marketing",
     },
     {
       image: portfolio5,
-      title: <>
-      {lang == "eng" && traduction['eng']['portfolio_title_5']}
-      {lang == "fr" && traduction['fr']['portfolio_title_5']}
-    </>,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_5'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_5'] : "")
+      ),
       description:
-      <>
-      {lang == "eng" && traduction['eng']['service_title_5']}
-      {lang == "fr" && traduction['fr']['service_title_5']}
-    </>,
+        <>
+          {lang == "eng" && traduction['eng']['service_title_5']}
+          {lang == "fr" && traduction['fr']['service_title_5']}
+        </>,
       filter: "marketing",
     },
     {
       image: portfolio6,
-      title: <>
-      {lang == "eng" && traduction['eng']['portfolio_title_6']}
-      {lang == "fr" && traduction['fr']['portfolio_title_6']}
-    </>,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_6'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_6'] : "")
+      ),
       description:
-      <>
-      {lang == "eng" && traduction['eng']['service_title_6']}
-      {lang == "fr" && traduction['fr']['service_title_6']}
-    </>,
+        <>
+          {lang == "eng" && traduction['eng']['service_title_6']}
+          {lang == "fr" && traduction['fr']['service_title_6']}
+        </>,
       filter: "branding",
     },
   ]);
