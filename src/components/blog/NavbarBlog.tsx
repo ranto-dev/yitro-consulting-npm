@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const NavbarBlog = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -55,7 +56,7 @@ const NavbarBlog = () => {
         <div className="ic-navbar-container relative -mx-5 flex items-center justify-between">
           <div className="w-60 lg:w-56 max-w-full px-5">
             <p className="ic-navbar-logo block w-full text-5xl font-semibold py-5 text-primary-color">
-              Yitro-consulting
+              <Link to={"/"}>Yitro consulting</Link>
             </p>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { FaStar } from "react-icons/fa6";
 import Illustation from "../../assets/img/blog/shape-14.svg";
 import { motion } from "framer-motion";
 
@@ -24,10 +25,30 @@ const HeroBlog = () => {
           </a>
         </div>
       </div>
-      <div className="relative top-10 border rounded-full p-4"></div>
+
+      <motion.div
+        initial={{ opacity: 0, x: -500 }}
+        animate={{ opacity: 1, x: 0, rotate: -20 }}
+        className="absolute border rounded-full p-4 top-[8rem] left-[4rem]"
+      >
+        <FaStar className="text-6xl" />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="relative top-10 border rounded-full p-4"
+      ></motion.div>
 
       <motion.img
-        className="w-[25%] absolute bottom-0 right-1 "
+        initial={{ opacity: 0, y: -200 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.5,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+        className="w-[25%] absolute bottom-0 right-1"
         style={{ zIndex: 0 }}
         src={Illustation}
         alt="illustration"
