@@ -29,26 +29,24 @@ const HeroBlog = () => {
       <motion.div
         initial={{ opacity: 0, x: -500 }}
         animate={{ opacity: 1, x: 0, rotate: -20 }}
+        transition={{ duration: 1.5, delay: 0.3 }}
         className="absolute border rounded-full p-4 top-[8rem] left-[4rem]"
       >
-        <FaStar className="text-6xl" />
+        <FaStar className="text-2xl" />
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
         className="relative top-10 border rounded-full p-4"
       ></motion.div>
 
       <motion.img
-        initial={{ opacity: 0, y: -200 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.5,
-          delay: 0.5,
-          ease: [0.25, 0.1, 0.25, 1],
-        }}
-        className="w-[25%] absolute bottom-0 right-1"
+        initial={{ opacity: 0, y: -2000 }}
+        animate={{ opacity: 1.5, y: 0 }}
+        transition={{ duration: 1, delay: 0.4 }}
+        className="w-[15%] absolute -bottom-3 right-32"
         style={{ zIndex: 0 }}
         src={Illustation}
         alt="illustration"

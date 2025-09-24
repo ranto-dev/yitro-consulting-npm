@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { FaMoon, FaSun } from "react-icons/fa6";
+import { FaTimes } from "react-icons/fa";
+import { FaBars, FaMoon, FaSun } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -94,14 +95,12 @@ const Navbar = () => {
             <div>
               <button
                 type="button"
-                className="ic-navbar-toggler absolute right-4 top-1/2 block -translate-y-1/2 rounded-md px-3 py-[6px] text-[22px]/none text-primary-color ring-primary focus:ring-2 lg:hidden"
+                className="ic-navbar-toggler absolute right-4 -bottom-5 block -translate-y-1/2 rounded-md px-3 py-[6px] text-[22px]/none text-primary-color ring-primary focus:ring-2 lg:hidden"
                 onClick={toggleMenu}
                 aria-expanded={isMenuOpen}
                 aria-label="Toggle navigation menu"
               >
-                <i
-                  className={isMenuOpen ? "lni lni-close" : "lni lni-menu"}
-                ></i>
+                {isMenuOpen ? <FaTimes /> : <FaBars />}
               </button>
               <nav
                 id="navbarMenu"
