@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import NavbarBlog from "../../components/blog/NavbarBlog";
 import HeroBlog from "../../components/blog/HeroBlog";
 import Content from "../../components/blog/Content";
+import Contact from "../../components/home/Contact";
+import Footer from "../../components/home/Footer";
 
 export default function AllBlogs() {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,6 +43,8 @@ export default function AllBlogs() {
         <NavbarBlog />
         <HeroBlog />
         <Content />
+        <Contact />
+        <Footer />
       </div>
     </>
   );

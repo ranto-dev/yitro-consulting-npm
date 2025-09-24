@@ -16,7 +16,7 @@ const CallToAction = () => {
             off his nut.
           </p>
           <a
-            href="javascript:void(0)"
+            href="#contact"
             className="inline-block px-5 py-3 rounded-md mt-11 bg-green-400 text-white hover:bg-green-500 hover:text-white focus:bg-green-500 focus:text-white"
             role="button"
           >

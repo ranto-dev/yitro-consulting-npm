@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import type { BlogPost } from "../../types/BlogPost";
 import blog1 from "../../assets/img/thumbnail/thumbnail-1.jpg";
 import blog2 from "../../assets/img/thumbnail/thumbnail-2.jpg";
 import blog3 from "../../assets/img/thumbnail/thumbnail-3.jpg";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { FaSearch } from "react-icons/fa";
 
 const Content: React.FC = () => {
   const [blogPosts] = useState<BlogPost[]>([
@@ -15,7 +16,6 @@ const Content: React.FC = () => {
       title: "Business Consulting Is Important for Every Business.",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      author: "Admin",
       date: "Jan 28, 2025",
       link: "blog-details.html",
     },
@@ -26,7 +26,6 @@ const Content: React.FC = () => {
       title: "Top 5 Tips for Better Financial Planning.",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      author: "Admin",
       date: "Jan 28, 2025",
       link: "blog-details.html",
     },
@@ -37,95 +36,105 @@ const Content: React.FC = () => {
       title: "How to Grow Your Business with Digital Marketing.",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      author: "Admin",
+      date: "Jan 28, 2025",
+      link: "blog-details.html",
+    },
+    {
+      id: 4,
+      image: blog1,
+      category: "Consulting",
+      title: "Business Consulting Is Important for Every Business.",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      date: "Jan 28, 2025",
+      link: "blog-details.html",
+    },
+    {
+      id: 5,
+      image: blog2,
+      category: "Finance",
+      title: "Top 5 Tips for Better Financial Planning.",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      date: "Jan 28, 2025",
+      link: "blog-details.html",
+    },
+    {
+      id: 6,
+      image: blog3,
+      category: "Business",
+      title: "How to Grow Your Business with Digital Marketing.",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "Jan 28, 2025",
       link: "blog-details.html",
     },
   ]);
 
-  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-
-  useEffect(() => {
-    if (selectedCategory === "All") {
-      setFilteredPosts(blogPosts);
-    } else {
-      setFilteredPosts(
-        blogPosts.filter((post) => post.category === selectedCategory)
-      );
-    }
-  }, [selectedCategory, blogPosts]);
-
-  const categories = ["All", "Consulting", "Finance", "Business"];
-
   const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, x: 20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
     exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
   };
 
   return (
-    <div className="flex flex-row gap-4 justify-around items-start p-4">
-      {/* SECTION DU FILTRE */}
-      <div className="w-[45%]">
-        <h1 className="text-xl mb-4 font-bold">Filter by Category</h1>
-        <ul className="flex flex-col gap-2">
-          {categories.map((category) => (
-            <li key={category}>
-              <button
-                onClick={() => setSelectedCategory(category)}
-                className={`w-full text-left p-2 rounded-lg transition-colors duration-200 ${
-                  selectedCategory === category
-                    ? "bg-indigo-600 text-black"
-                    : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-                }`}
-              >
-                {category}
-              </button>
-            </li>
-          ))}
-        </ul>
+    <div>
+      <div className="flex justify-between text-md p-4">
+        <div className="flex">
+          <input
+            type="text"
+            className="w-full border rounded-full p-4"
+            placeholder="Search ..."
+          />
+          <button className="relative right-10">
+            <FaSearch className="text-2xl" />
+          </button>
+        </div>
+        <div>
+          <label htmlFor="">Filter : </label>
+          <select id="filter" className="border rounded-full p-4 text-lg">
+            <option value="all">All</option>
+            <option value="consulting">Consulting</option>
+            <option value="finance">Finance</option>
+            <option value="business">Business</option>
+          </select>
+        </div>
       </div>
-
-      {/* SECTION DES CARTES DE BLOG */}
-      <div className="w-full flex flex-col gap-4">
-        <AnimatePresence mode="wait">
-          {filteredPosts.map((post) => (
-            <motion.div
-              key={post.id}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 ease-in-out"
-              variants={cardVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-            >
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <span className="text-sm text-gray-500 uppercase font-semibold">
-                  {post.category}
-                </span>
-                <h2 className="text-xl font-bold my-2">{post.title}</h2>
-                <p className="text-gray-600 text-sm">{post.excerpt}</p>
-                <div className="flex justify-between items-center mt-4 text-sm text-gray-400">
-                  <span>By {post.author}</span>
-                  <span>{post.date}</span>
-                </div>
-                <div className="mt-4">
-                  <Link
-                    to={post.link}
-                    className="inline-block text-indigo-600 hover:text-indigo-800 transition font-medium"
-                  >
-                    Read More →
-                  </Link>
-                </div>
+      <div className="w-full grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        {blogPosts.map((post) => (
+          <motion.div
+            key={post.id}
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 ease-in-out"
+            variants={cardVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <span className="text-sm text-gray-500 uppercase font-semibold">
+                {post.category}
+              </span>
+              <h2 className="text-xl font-bold my-2">{post.title}</h2>
+              <p className="text-gray-600 text-sm">{post.excerpt}</p>
+              <div className="flex justify-end items-center mt-4 text-sm text-gray-400">
+                <span>{post.date}</span>
               </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+              <div className="mt-4">
+                <Link
+                  to={post.link}
+                  className="inline-block text-indigo-600 hover:text-indigo-800 transition font-medium"
+                >
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

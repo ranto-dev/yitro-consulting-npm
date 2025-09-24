@@ -15,7 +15,6 @@ const Blog = () => {
       title: "Business Consulting Is Important for Every Business.",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      author: "Admin",
       date: "Jan 28, 2025",
       link: "blog-details.html",
     },
@@ -26,7 +25,6 @@ const Blog = () => {
       title: "Top 5 Tips for Better Financial Planning.",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      author: "Admin",
       date: "Jan 28, 2025",
       link: "blog-details.html",
     },
@@ -37,7 +35,6 @@ const Blog = () => {
       title: "How to Grow Your Business with Digital Marketing.",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      author: "Admin",
       date: "Jan 28, 2025",
       link: "blog-details.html",
     },
@@ -87,10 +84,6 @@ const Blog = () => {
                   {post.excerpt}
                 </p>
                 <ul className="flex flex-wrap items-center gap-4 text-base text-body-light-11 dark:text-body-dark-11">
-                  <li className="flex items-center gap-2">
-                    <FaUser className="text-primary text-xl" />
-                    <span>by {post.author}</span>
-                  </li>
                   <li className="flex items-center gap-2">
                     <FaCalendarDay className="text-primary text-xl" />
                     <span>{post.date}</span>

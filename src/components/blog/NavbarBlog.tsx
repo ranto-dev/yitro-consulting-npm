@@ -1,12 +1,24 @@
 import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa6";
-// import { Link } from "react-router-dom";
 
 const NavbarBlog = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [theme, setTheme] = useState("light");
+
+  const LINKS = [
+    {
+      id: 1,
+      title: "Home",
+      link: "/",
+    },
+    {
+      id: 2,
+      title: "Contact",
+      link: "#contact",
+    },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,56 +38,16 @@ const NavbarBlog = () => {
       setIsSticky(window.scrollY >= 72);
     };
 
-    const handleScrollspy = () => {
-      const links =
-        document.querySelectorAll<HTMLAnchorElement>(".ic-page-scroll");
-      const scrollpos =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      links.forEach((link) => {
-        const href = link.getAttribute("href");
-        if (href) {
-          const targetElement = document.querySelector<HTMLElement>(href);
-          if (targetElement) {
-            const topminus = scrollpos + 74;
-            if (
-              targetElement.offsetTop <= topminus &&
-              targetElement.offsetTop + targetElement.offsetHeight > topminus
-            ) {
-              link.classList.add("active");
-            } else {
-              link.classList.remove("active");
-            }
-          }
-        }
-      });
-    };
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scroll", handleScrollspy);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll", handleScrollspy);
     };
   }, []);
 
   useEffect(() => {
     document.documentElement.dataset.webTheme = theme;
   }, [theme]);
-
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const href = e.currentTarget.getAttribute("href");
-
-    if (href) {
-      const targetElement = document.querySelector<HTMLElement>(href);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
-    setIsMenuOpen(false);
-  };
 
   return (
     <header
@@ -114,23 +86,14 @@ const NavbarBlog = () => {
                   role="menu"
                   aria-label="Navigation menu"
                 >
-                  {[
-                    "Home",
-                    "Services",
-                    "Portfolio",
-                    "Pricing",
-                    "Team",
-                    "Blog",
-                    "Contact",
-                  ].map((item, index) => (
+                  {LINKS.map((item, index) => (
                     <li key={index} className="group relative">
                       <a
-                        href={`#${item.toLowerCase()}`}
+                        href={item.link}
                         className="ic-page-scroll mx-8 flex py-2 text-base text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mx-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70"
                         role="menuitem"
-                        onClick={handleLinkClick}
                       >
-                        {item}
+                        {item.title}
                       </a>
                     </li>
                   ))}
@@ -150,6 +113,15 @@ const NavbarBlog = () => {
                   <FaSun className={isSticky ? "text-black" : ""} />
                 )}
               </button>
+              <div className="hidden sm:flex">
+                <a
+                  href="#contact"
+                  className="btn-navbar ml-5 px-6 py-3 rounded-md bg-primary-color bg-opacity-20 text-base font-medium text-primary-color hover:bg-opacity-100 hover:text-primary"
+                  role="button"
+                >
+                  Get Started
+                </a>
+              </div>
             </div>
           </div>
         </div>

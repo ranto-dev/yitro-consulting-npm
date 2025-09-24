@@ -151,7 +151,7 @@ const Navbar = () => {
               </button>
               <div className="hidden sm:flex">
                 <a
-                  href="javascript:void(0)"
+                  href="#contact"
                   className="btn-navbar ml-5 px-6 py-3 rounded-md bg-primary-color bg-opacity-20 text-base font-medium text-primary-color hover:bg-opacity-100 hover:text-primary"
                   role="button"
                 >
