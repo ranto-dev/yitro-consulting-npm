@@ -6,7 +6,7 @@ import portfolio4 from "../../assets/img/portfolio/portfolio-4.jpg";
 import portfolio5 from "../../assets/img/portfolio/portfolio-5.jpg";
 import portfolio6 from "../../assets/img/portfolio/portfolio-6.jpg";
 import { FaLink, FaMagnifyingGlassPlus } from "react-icons/fa6";
-import traduction from "../../../public/traduction/traduction.json";
+import traduction from "../../traduction/portfolio.json";
 // const portfolioItems = [
 //   {
 //     image: portfolio1,
@@ -67,8 +67,8 @@ const Portfolio = ({ lang }: lang) => {
       ,
       description:
         <>
-          {lang == "eng" && traduction['eng']['service_title_1']}
-          {lang == "fr" && traduction['fr']['service_title_1']}
+          {lang == "eng" && traduction['eng']['portfolio_deescription_1']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_1']}
         </>,
       filter: "branding",
     },
@@ -80,8 +80,8 @@ const Portfolio = ({ lang }: lang) => {
       ),
       description:
         <>
-          {lang == "eng" && traduction['eng']['service_title_2']}
-          {lang == "fr" && traduction['fr']['service_title_2']}
+          {lang == "eng" && traduction['eng']['portfolio_deescription_2']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_2']}
         </>,
       filter: "planning",
     },
@@ -93,8 +93,8 @@ const Portfolio = ({ lang }: lang) => {
       ),
       description:
         <>
-          {lang == "eng" && traduction['eng']['service_title_3']}
-          {lang == "fr" && traduction['fr']['service_title_3']}
+          {lang == "eng" && traduction['eng']['portfolio_deescription_3']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_3']}
         </>,
       filter: "marketing",
     },
@@ -106,8 +106,8 @@ const Portfolio = ({ lang }: lang) => {
       ),
       description:
         <>
-          {lang == "eng" && traduction['eng']['service_title_4']}
-          {lang == "fr" && traduction['fr']['service_title_4']}
+          {lang == "eng" && traduction['eng']['portfolio_deescription_4']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_4']}
         </>,
       filter: "marketing",
     },
@@ -119,8 +119,8 @@ const Portfolio = ({ lang }: lang) => {
       ),
       description:
         <>
-          {lang == "eng" && traduction['eng']['service_title_5']}
-          {lang == "fr" && traduction['fr']['service_title_5']}
+          {lang == "eng" && traduction['eng']['portfolio_deescription_5']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_5']}
         </>,
       filter: "marketing",
     },
@@ -132,8 +132,8 @@ const Portfolio = ({ lang }: lang) => {
       ),
       description:
         <>
-          {lang == "eng" && traduction['eng']['service_title_6']}
-          {lang == "fr" && traduction['fr']['service_title_6']}
+          {lang == "eng" && traduction['eng']['portfolio_deescription_6']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_6']}
         </>,
       filter: "branding",
     },

@@ -1,0 +1,34 @@
+{
+    "fr": {
+        "our_service": "Our Best Services",
+        "our_service_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "service_title_1": "Digital Marketing",
+        "service_title_2": "Web & Mobile Development",
+        "service_title_3": "Digital Transformation",
+        "service_title_4": "E-learning & Training",
+        "service_title_5": "Consulting & Change Management",
+        "service_title_6": "Legal Consulting",
+        "service_description_1": "We design data-driven marketing strategies to boost your visibility and attract qualified leads. From SEO to Google & social ads, we tailor every campaign to your goals. Results that matter, growth you can measure.",
+        "service_description_2": "We build responsive, secure websites and apps that match your vision and scale with your business. Whether it’s an e-commerce, a showcase site, or a mobile app, we deliver high-performance solutions. Smart tech, beautiful design.",
+        "service_description_3": "We guide your business through every step of digital transformation—from audits to implementation. Our human-centered approach ensures smooth adoption and long-term impact. More than tech, it’s a mindset shift.",
+        "service_description_4": "With Yitro Learning, we offer impactful training based on neuroscience and storytelling. Learn faster, remember longer, and grow personally or professionally. Flexible learning, lasting change.",
+        "service_description_5": "We help you lead change with clarity and confidence. From team coaching to strategic planning, we support transformation at every level. People-focused. Results-driven.",
+        "service_description_6": "We provide expert legal consulting to help businesses navigate regulatory, contractual, and compliance matters. From company formation to digital policy audits, we ensure your operations are secure and legally sound. Smart business starts with solid legal foundations."
+    },
+    "eng": {
+        "our_service": "Our Best Services",
+        "our_service_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "service_title_1": "Digital Marketing",
+        "service_title_2": "Web & Mobile Development",
+        "service_title_3": "Digital Transformation",
+        "service_title_4": "E-learning & Training",
+        "service_title_5": "Consulting & Change Management",
+        "service_title_6": "Legal Consulting",
+        "service_description_1": "We design data-driven marketing strategies to boost your visibility and attract qualified leads. From SEO to Google & social ads, we tailor every campaign to your goals. Results that matter, growth you can measure.",
+        "service_description_2": "We build responsive, secure websites and apps that match your vision and scale with your business. Whether it’s an e-commerce, a showcase site, or a mobile app, we deliver high-performance solutions. Smart tech, beautiful design.",
+        "service_description_3": "We guide your business through every step of digital transformation—from audits to implementation. Our human-centered approach ensures smooth adoption and long-term impact. More than tech, it’s a mindset shift.",
+        "service_description_4": "With Yitro Learning, we offer impactful training based on neuroscience and storytelling. Learn faster, remember longer, and grow personally or professionally. Flexible learning, lasting change.",
+        "service_description_5": "We help you lead change with clarity and confidence. From team coaching to strategic planning, we support transformation at every level. People-focused. Results-driven.",
+        "service_description_6": "We provide expert legal consulting to help businesses navigate regulatory, contractual, and compliance matters. From company formation to digital policy audits, we ensure your operations are secure and legally sound. Smart business starts with solid legal foundations."
+    }
+}

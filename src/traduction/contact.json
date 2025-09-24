@@ -1,0 +1,16 @@
+{
+    "fr": {
+        "contact_title": "Contact Us",
+        "contact_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "send_btn_msg": "Send Message",
+        "contact_information_title": "Our Information",
+        "contact_information_paragraphe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do \n eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "eng": {
+        "contact_title": "Contact Us",
+        "contact_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "send_btn_msg": "Send Message",
+        "contact_information_title": "Our Information",
+        "contact_information_paragraphe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do \n eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+}

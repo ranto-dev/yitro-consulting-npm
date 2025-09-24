@@ -6,7 +6,7 @@ import {
   FaGraduationCap,
   FaScaleBalanced,
 } from "react-icons/fa6";
-import traduction from "../../../public/traduction/traduction.json";
+import traduction from "../../traduction/service.json";
 import { useState } from "react";
 
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import aboutImage from "../../assets/img/about-img.jpg";
-import traduction from "../../../public/traduction/traduction.json";
+import traduction from "../../traduction/about.json";
 
 
 interface lang {

@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 import avatar1 from "../../assets/img/avatar/avatar-1.jpg";
 import avatar2 from "../../assets/img/avatar/avatar-2.jpg";
 import avatar3 from "../../assets/img/avatar/avatar-3.jpg";
-import traduction from "../../../public/traduction/traduction.json";
+import traduction from "../../traduction/team.json";
 interface lang {
   lang: string
 }

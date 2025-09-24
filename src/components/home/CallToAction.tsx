@@ -1,4 +1,4 @@
-import traduction from "../../../public/traduction/traduction.json";
+import traduction from "../../traduction/calltoaction.json";
 interface lang {
   lang: string
 }

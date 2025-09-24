@@ -1,5 +1,5 @@
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
-import traduction from "../../../public/traduction/traduction.json";
+import traduction from "../../traduction/contact.json";
 interface lang {
   lang: string
 }

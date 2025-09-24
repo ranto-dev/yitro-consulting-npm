@@ -1,6 +1,6 @@
 import { FaPlay } from "react-icons/fa6";
 import introVideoImage from "../../assets/img/intro-video.jpg";
-import traduction from "../../../public/traduction/traduction.json";
+import traduction from "../../traduction/introvideo.json";
 
 interface lang {
   lang: string

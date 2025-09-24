@@ -12,7 +12,6 @@ import Blog from "../../components/home/Blog";
 import Contact from "../../components/home/Contact";
 import Footer from "../../components/home/Footer";
 import ScrollToTopButton from "../../components/home/ScrollToTopButton";
-import traduction from "../../../public/traduction/traduction.json";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +21,6 @@ export default function Home() {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
-    console.log(traduction)
     return () => clearTimeout(timer);
     
   }, []);
