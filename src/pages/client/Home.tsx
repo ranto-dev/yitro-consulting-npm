@@ -12,15 +12,19 @@ import Blog from "../../components/home/Blog";
 import Contact from "../../components/home/Contact";
 import Footer from "../../components/home/Footer";
 import ScrollToTopButton from "../../components/home/ScrollToTopButton";
+import traduction from "../../../public/traduction/traduction.json";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [lang, setLang] = useState("eng");
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
+    console.log(traduction)
     return () => clearTimeout(timer);
+    
   }, []);
 
   return (
@@ -49,8 +53,8 @@ export default function Home() {
 
       <Navbar />
       <div className="main relative">
-        <Hero />
-        <About />
+        <Hero lang={lang}/>
+        <About lang={lang}/>
         <Services />
         <IntroVideo />
         <Portfolio />
