@@ -1,0 +1,264 @@
+{
+    "fr": {
+        "heroTitle": "Welcome to Yitro-consulting",
+        "paragraphe": "Yitro-Consulting turns your ambitions into digital reality. Tailor-made solutions that boost your visibility, engage your clients, and drive your sales. From audit to delivery, we support every step of your digital transformation.",
+        "get_started": "Commencer",
+        "watch_intro": "Voir intro",
+        "our_profile": "Our Profile",
+        "our_vision": "Our vision",
+        "our_history": "Our history",
+        "our_profile_1": "Yitro-Consulting is a multidisciplinary consulting firm specializing in digital marketing, change management, and web development. We offer end-to-end support to help organizations grow, transform, and stand out in a competitive digital landscape. Our services range from strategic audits and branding to e-learning and custom application development.",
+        "our_profile_2": "Our strength lies in our ability to merge     strategy, creativity, and technology into impactful, measurable solutions. Backed by a team of passionate experts, we deliver tailor-made strategies that align with your goals and generate long-term results. From startups to NGOs, we create real digital value. fr",
+        "our_vision_1": "We believe digital transformation is not just about technology—it’s about people, purpose, and progress. Our vision is to build a more inclusive and sustainable digital future by helping organizations grow with intention and impact.",
+        "our_vision_2": "WAt Yitro-Consulting, we envision a world where innovation serves humanity. Through our integrated approach, we empower clients to lead change, embrace agility, and make bold decisions that shape tomorrow's digital economy.",
+        "our_history_1": "Founded by passionate changemakers, Yitro-Consulting began as a bold idea: to create a consulting firm that blends tech, learning, and strategy to drive meaningful impact. What started as a small team has grown into a full-fledged digital ecosystem, serving clients across Africa, Europe, and North America.",
+        "our_history_2": "Over the years, we’ve evolved alongside the digital world, expanding our services to meet the challenges of a constantly shifting landscape. Today, our journey continues—guided by innovation, strengthened by our values, and inspired by every client we serve.",
+        "about_us": "About Us",
+        "about_paragraphe": "Our team comes with the experience and knowledge",
+        "our_service": "Our Best Services",
+        "our_service_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "service_title_1": "Digital Marketing",
+        "service_title_2": "Web & Mobile Development",
+        "service_title_3": "Digital Transformation",
+        "service_title_4": "E-learning & Training",
+        "service_title_5": "Consulting & Change Management",
+        "service_title_6": "Legal Consulting",
+        "service_description_1": "We design data-driven marketing strategies to boost your visibility and attract qualified leads. From SEO to Google & social ads, we tailor every campaign to your goals. Results that matter, growth you can measure.",
+        "service_description_2": "We build responsive, secure websites and apps that match your vision and scale with your business. Whether it’s an e-commerce, a showcase site, or a mobile app, we deliver high-performance solutions. Smart tech, beautiful design.",
+        "service_description_3": "We guide your business through every step of digital transformation—from audits to implementation. Our human-centered approach ensures smooth adoption and long-term impact. More than tech, it’s a mindset shift.",
+        "service_description_4": "With Yitro Learning, we offer impactful training based on neuroscience and storytelling. Learn faster, remember longer, and grow personally or professionally. Flexible learning, lasting change.",
+        "service_description_5": "We help you lead change with clarity and confidence. From team coaching to strategic planning, we support transformation at every level. People-focused. Results-driven.",
+        "service_description_6": "We provide expert legal consulting to help businesses navigate regulatory, contractual, and compliance matters. From company formation to digital policy audits, we ensure your operations are secure and legally sound. Smart business starts with solid legal foundations.",
+        "intro_video_title": "Watch Our Intro Video",
+        "intro_video_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "recent_work_title": "Our Recent Works",
+        "recent_work_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "portfolio_title_1": "Graphics Design",
+        "portfolio_title_2": "Web Development",
+        "portfolio_title_3": "App Development",
+        "portfolio_title_4": "Digital Marketing",
+        "portfolio_title_5": "SEO Services",
+        "portfolio_title_6": "Product Design",
+        "portfolio_deescription_1": "Short description for the ones who look for something new. Awesome!",
+        "portfolio_deescription_2": "Short description for the ones who look for something new. Awesome!",
+        "portfolio_deescription_3": "Short description for the ones who look for something new. Awesome!",
+        "portfolio_deescription_4": "Short description for the ones who look for something new. Awesome!",
+        "portfolio_deescription_5": "Short description for the ones who look for something new. Awesome!",
+        "portfolio_deescription_6": "Short description for the ones who look for something new. Awesome!",
+        "pricing_title": "Pricing & Plans",
+        "pricing_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "starter": {
+            "title": "Starter",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Start Free Trial",
+            "price": "0"
+        },
+        "exclusive": {
+            "title": "Exclusive",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Purchase Now",
+            "price": "99"
+        },
+        "premium": {
+            "title": "Premium",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Purchase Now",
+            "price": "150"
+        },
+        "call_to_action_title":"We love to make perfect solutions for your business",
+        "call_to_action_paragraphe": "Why I say old chap that is, spiffing off his nut cor blimey guvnords geeza bloke knees up bobby, sloshed arse William cack Richard. Bloke fanny around chesed of bum bag old lost the pilot say there spiffing off his nut.",
+        "call_to_action_btn": "Get Started Now",
+        "team_title":"Our Creative Team",
+        "team_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "contact_title": "Contact Us",
+        "contact_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "send_btn_msg": "Send Message",
+        "contact_information_title": "Our Information",
+        "contact_information_paragraphe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do \n eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "eng": {
+        "heroTitle": "Welcome to Yitro-consulting",
+        "paragraphe": "Yitro-Consulting turns your ambitions into digital reality. Tailor-made solutions that boost your visibility, engage your clients, and drive your sales. From audit to delivery, we support every step of your digital transformation.",
+        "get_started": "Get Started",
+        "watch_intro": "Watch intro",
+        "our_profile": "Our Profile",
+        "our_vision": "Our vision",
+        "our_history": "Our history",
+        "our_profile_1": "Yitro-Consulting is a multidisciplinary consulting firm specializing in digital marketing, change management, and web development. We offer end-to-end support to help organizations grow, transform, and stand out in a competitive digital landscape. Our services range from strategic audits and branding to e-learning and custom application development.",
+        "our_profile_2": "Our strength lies in our ability to merge     strategy, creativity, and technology into impactful, measurable solutions. Backed by a team of passionate experts, we deliver tailor-made strategies that align with your goals and generate long-term results. From startups to NGOs, we create real digital value. ",
+        "our_vision_1": "We believe digital transformation is not just about technology—it’s about people, purpose, and progress. Our vision is to build a more inclusive and sustainable digital future by helping organizations grow with intention and impact.",
+        "our_vision_2": "WAt Yitro-Consulting, we envision a world where innovation serves humanity. Through our integrated approach, we empower clients to lead change, embrace agility, and make bold decisions that shape tomorrow's digital economy.",
+        "our_history_1": "Founded by passionate changemakers, Yitro-Consulting began as a bold idea: to create a consulting firm that blends tech, learning, and strategy to drive meaningful impact. What started as a small team has grown into a full-fledged digital ecosystem, serving clients across Africa, Europe, and North America.",
+        "our_history_2": "Over the years, we’ve evolved alongside the digital world, expanding our services to meet the challenges of a constantly shifting landscape. Today, our journey continues—guided by innovation, strengthened by our values, and inspired by every client we serve.",
+        "about_us": "About Us",
+        "about_paragraphe": "Our team comes with the experience and knowledge",
+        "our_service": "Our Best Services",
+        "our_service_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "service_title_1": "Digital Marketing",
+        "service_title_2": "Web & Mobile Development",
+        "service_title_3": "Digital Transformation",
+        "service_title_4": "E-learning & Training",
+        "service_title_5": "Consulting & Change Management",
+        "service_title_6": "Legal Consulting",
+        "service_description_1": "We design data-driven marketing strategies to boost your visibility and attract qualified leads. From SEO to Google & social ads, we tailor every campaign to your goals. Results that matter, growth you can measure.",
+        "service_description_2": "We build responsive, secure websites and apps that match your vision and scale with your business. Whether it’s an e-commerce, a showcase site, or a mobile app, we deliver high-performance solutions. Smart tech, beautiful design.",
+        "service_description_3": "We guide your business through every step of digital transformation—from audits to implementation. Our human-centered approach ensures smooth adoption and long-term impact. More than tech, it’s a mindset shift.",
+        "service_description_4": "With Yitro Learning, we offer impactful training based on neuroscience and storytelling. Learn faster, remember longer, and grow personally or professionally. Flexible learning, lasting change.",
+        "service_description_5": "We help you lead change with clarity and confidence. From team coaching to strategic planning, we support transformation at every level. People-focused. Results-driven.",
+        "service_description_6": "We provide expert legal consulting to help businesses navigate regulatory, contractual, and compliance matters. From company formation to digital policy audits, we ensure your operations are secure and legally sound. Smart business starts with solid legal foundations.",
+        "intro_video_title": "Watch Our Intro Video",
+        "intro_video_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "recent_work_title": "Our Recent Works",
+        "recent_work_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "portfolio_title_1": "Graphics Design",
+        "portfolio_title_2": "Web Development",
+        "portfolio_title_3": "App Development",
+        "portfolio_title_4": "Digital Marketing",
+        "portfolio_title_5": "SEO Services",
+        "portfolio_title_6": "Product Design",
+        "portfolio_deescription_1": "Short description for the ones who look for something new. Awesome!",
+        "portfolio_deescription_2": "Short description for the ones who look for something new. Awesome!",
+        "portfolio_deescription_3": "Short description for the ones who look for something new. Awesome!",
+        "portfolio_deescription_4": "Short description for the ones who look for something new. Awesome!",
+        "portfolio_deescription_5": "Short description for the ones who look for something new. Awesome!",
+        "portfolio_deescription_6": "Short description for the ones who look for something new. Awesome!",
+        "pricing_title": "Pricing & Plans",
+        "pricing_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "starter": {
+            "title": "Starter",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Start Free Trial",
+            "price": "0"
+        },
+        "exclusive": {
+            "title": "Exclusive",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Purchase Now",
+            "price": "99"
+        },
+        "premium": {
+            "title": "Premium",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Purchase Now",
+            "price": "150"
+        },
+        "call_to_action_title":"We love to make perfect solutions for your business",
+        "call_to_action_paragraphe": "Why I say old chap that is, spiffing off his nut cor blimey guvnords geeza bloke knees up bobby, sloshed arse William cack Richard. Bloke fanny around chesed of bum bag old lost the pilot say there spiffing off his nut.",
+        "call_to_action_btn": "Get Started Now",
+        "team_title":"Our Creative Team",
+        "team_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "contact_title": "Contact Us",
+        "contact_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "send_btn_msg": "Send Message",
+        "contact_information_title": "Our Information",
+        "contact_information_paragraphe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do \n eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+}

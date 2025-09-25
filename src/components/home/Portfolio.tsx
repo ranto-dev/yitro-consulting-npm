@@ -6,55 +6,138 @@ import portfolio4 from "../../assets/img/portfolio/portfolio-4.jpg";
 import portfolio5 from "../../assets/img/portfolio/portfolio-5.jpg";
 import portfolio6 from "../../assets/img/portfolio/portfolio-6.jpg";
 import { FaLink, FaMagnifyingGlassPlus } from "react-icons/fa6";
-
-const portfolioItems = [
-  {
-    image: portfolio1,
-    title: "Graphics Design",
-    description:
-      "Short description for the ones who look for something new. Awesome!",
-    filter: "branding",
-  },
-  {
-    image: portfolio2,
-    title: "Web Development",
-    description:
-      "Short description for the ones who look for something new. Awesome!",
-    filter: "planning",
-  },
-  {
-    image: portfolio3,
-    title: "App Development",
-    description:
-      "Short description for the ones who look for something new. Awesome!",
-    filter: "marketing",
-  },
-  {
-    image: portfolio4,
-    title: "Digital Marketing",
-    description:
-      "Short description for the ones who look for something new. Awesome!!",
-    filter: "marketing",
-  },
-  {
-    image: portfolio5,
-    title: "SEO Services",
-    description:
-      "Short description for the ones who look for something new. Awesome!",
-    filter: "marketing",
-  },
-  {
-    image: portfolio6,
-    title: "Product Design",
-    description:
-      "Short description for the ones who look for something new. Awesome!",
-    filter: "branding",
-  },
-];
-
-const Portfolio = () => {
+import traduction from "../../traduction/portfolio.json";
+// const portfolioItems = [
+//   {
+//     image: portfolio1,
+//     title: "Graphics Design",
+//     description:
+//       "Short description for the ones who look for something new. Awesome!",
+//     filter: "branding",
+//   },
+//   {
+//     image: portfolio2,
+//     title: "Web Development",
+//     description:
+//       "Short description for the ones who look for something new. Awesome!",
+//     filter: "planning",
+//   },
+//   {
+//     image: portfolio3,
+//     title: "App Development",
+//     description:
+//       "Short description for the ones who look for something new. Awesome!",
+//     filter: "marketing",
+//   },
+//   {
+//     image: portfolio4,
+//     title: "Digital Marketing",
+//     description:
+//       "Short description for the ones who look for something new. Awesome!!",
+//     filter: "marketing",
+//   },
+//   {
+//     image: portfolio5,
+//     title: "SEO Services",
+//     description:
+//       "Short description for the ones who look for something new. Awesome!",
+//     filter: "marketing",
+//   },
+//   {
+//     image: portfolio6,
+//     title: "Product Design",
+//     description:
+//       "Short description for the ones who look for something new. Awesome!",
+//     filter: "branding",
+//   },
+// ];
+interface lang {
+  lang: string
+}
+const Portfolio = ({ lang }: lang) => {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [portfolioItems, _] = useState([
+    {
+      image: portfolio1,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_1'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_1'] : "")
+      )
 
+      ,
+      description:
+        <>
+          {lang == "eng" && traduction['eng']['portfolio_deescription_1']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_1']}
+        </>,
+      filter: "branding",
+    },
+    {
+      image: portfolio2,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_2'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_2'] : "")
+      ),
+      description:
+        <>
+          {lang == "eng" && traduction['eng']['portfolio_deescription_2']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_2']}
+        </>,
+      filter: "planning",
+    },
+    {
+      image: portfolio3,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_3'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_3'] : "")
+      ),
+      description:
+        <>
+          {lang == "eng" && traduction['eng']['portfolio_deescription_3']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_3']}
+        </>,
+      filter: "marketing",
+    },
+    {
+      image: portfolio4,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_4'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_4'] : "")
+      ),
+      description:
+        <>
+          {lang == "eng" && traduction['eng']['portfolio_deescription_4']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_4']}
+        </>,
+      filter: "marketing",
+    },
+    {
+      image: portfolio5,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_5'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_5'] : "")
+      ),
+      description:
+        <>
+          {lang == "eng" && traduction['eng']['portfolio_deescription_5']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_5']}
+        </>,
+      filter: "marketing",
+    },
+    {
+      image: portfolio6,
+      title: (
+        (lang == "eng" ? traduction['eng']['portfolio_title_6'] : "") +
+        (lang == "fr" ? traduction['eng']['portfolio_title_6'] : "")
+      ),
+      description:
+        <>
+          {lang == "eng" && traduction['eng']['portfolio_deescription_6']}
+          {lang == "fr" && traduction['fr']['portfolio_deescription_6']}
+        </>,
+      filter: "branding",
+    },
+  ]);
   const filteredItems =
     activeFilter === "all"
       ? portfolioItems
@@ -67,10 +150,13 @@ const Portfolio = () => {
           <h6 className="mb-2 block text-lg font-semibold text-primary">
             Portfolio
           </h6>
-          <h2 className="mb-6">Our Recent Works</h2>
+          <h2 className="mb-6">
+            {lang == "eng" && traduction['eng']['recent_work_title']}
+            {lang == "fr" && traduction['fr']['recent_work_title']}
+          </h2>
           <p>
-            There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form.
+            {lang == "eng" && traduction['eng']['recent_work_paragraphe']}
+            {lang == "fr" && traduction['fr']['recent_work_paragraphe']}
           </p>
         </div>
         <nav
@@ -82,9 +168,8 @@ const Portfolio = () => {
               <button
                 key={filter}
                 type="button"
-                className={`font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color ${
-                  activeFilter === filter ? "active" : ""
-                }`}
+                className={`font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color ${activeFilter === filter ? "active" : ""
+                  }`}
                 onClick={() => setActiveFilter(filter)}
                 data-filter={filter}
               >

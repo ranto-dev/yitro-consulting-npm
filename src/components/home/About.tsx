@@ -1,6 +1,6 @@
 import { useState } from "react";
 import aboutImage from "../../assets/img/about-img.jpg";
-import traduction from "../../../public/traduction/traduction.json";
+import traduction from "../../traduction/about.json";
 
 
 interface lang {
@@ -11,7 +11,10 @@ const About = ({ lang }: lang) => {
   const [tabsData, _] = useState([
     {
       id: "tabs-panel-profile",
-      label: "Our Profile",
+      label: <>
+        {lang == "eng" && traduction['eng']['our_profile']}
+        {lang == "fr" && traduction['fr']['our_profile']}
+      </>,
       content: (
         <>
           <p>
@@ -27,7 +30,10 @@ const About = ({ lang }: lang) => {
     },
     {
       id: "tabs-panel-vision",
-      label: "Our Vision",
+      label: <>
+      {lang == "eng" && traduction['eng']['our_vision']}
+      {lang == "fr" && traduction['fr']['our_vision']}
+    </>,
       content: (
         <>
           <p>
@@ -43,7 +49,10 @@ const About = ({ lang }: lang) => {
     },
     {
       id: "tabs-panel-history",
-      label: "Our History",
+      label: <>
+      {lang == "eng" && traduction['eng']['our_history']}
+      {lang == "fr" && traduction['fr']['our_history']}
+    </>,
       content: (
         <>
           <p>
@@ -73,10 +82,12 @@ const About = ({ lang }: lang) => {
           <div className="w-full">
             <div className="scroll-revealed">
               <h6 className="mb-2 block text-lg font-semibold text-primary">
-                About Us
+              {lang == "eng" && traduction['eng']['about_us']}
+              {lang == "fr" && traduction['fr']['about_us']}
               </h6>
               <h2 className="mb-6">
-                Our team comes with the experience and knowledge
+              {lang == "eng" && traduction['eng']['about_paragraphe']}
+              {lang == "fr" && traduction['fr']['about_paragraphe']}
               </h2>
             </div>
             <div className="tabs scroll-revealed">

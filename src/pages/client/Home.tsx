@@ -12,7 +12,6 @@ import Blog from "../../components/home/Blog";
 import Contact from "../../components/home/Contact";
 import Footer from "../../components/home/Footer";
 import ScrollToTopButton from "../../components/home/ScrollToTopButton";
-import traduction from "../../../public/traduction/traduction.json";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +21,6 @@ export default function Home() {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
-    console.log(traduction)
     return () => clearTimeout(timer);
     
   }, []);
@@ -55,14 +53,14 @@ export default function Home() {
       <div className="main relative">
         <Hero lang={lang}/>
         <About lang={lang}/>
-        <Services />
-        <IntroVideo />
-        <Portfolio />
-        <Pricing />
-        <CallToAction />
-        <Team />
+        <Services lang={lang}/>
+        <IntroVideo lang={lang}/>
+        <Portfolio lang={lang}/>
+        <Pricing lang={lang}/>
+        <CallToAction lang={lang}/>
+        <Team lang={lang}/>
         <Blog />
-        <Contact />
+        <Contact lang={lang}/>
       </div>
       <Footer />
       <ScrollToTopButton />

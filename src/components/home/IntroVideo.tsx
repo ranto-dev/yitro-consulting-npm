@@ -1,7 +1,11 @@
 import { FaPlay } from "react-icons/fa6";
 import introVideoImage from "../../assets/img/intro-video.jpg";
+import traduction from "../../traduction/introvideo.json";
 
-const IntroVideo = () => {
+interface lang {
+  lang: string
+}
+const IntroVideo = ({ lang }: lang) => {
   return (
     <section id="intro" className="section-area">
       <div className="container">
@@ -9,10 +13,13 @@ const IntroVideo = () => {
           <h6 className="mb-2 block text-lg font-semibold text-primary">
             Intro Video
           </h6>
-          <h2 className="mb-6">Watch Our Intro Video</h2>
+          <h2 className="mb-6">
+            {lang == "eng" && traduction['eng']['intro_video_title']}
+            {lang == "fr" && traduction['fr']['intro_video_title']}
+          </h2>
           <p>
-            There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form.
+          {lang == "eng" && traduction['eng']['intro_video_paragraphe']}
+          {lang == "fr" && traduction['fr']['intro_video_paragraphe']}
           </p>
         </div>
         <div className="scroll-revealed relative max-w-[900px] mx-auto">

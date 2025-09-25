@@ -1,0 +1,154 @@
+{
+    "fr": {
+        "pricing_title": "Pricing & Plans",
+        "pricing_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "starter": {
+            "title": "Starter",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Start Free Trial",
+            "price": "0"
+        },
+        "exclusive": {
+            "title": "Exclusive",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Purchase Now",
+            "price": "99"
+        },
+        "premium": {
+            "title": "Premium",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Purchase Now",
+            "price": "150"
+        }
+    },
+    "eng": {
+        "pricing_title": "Pricing & Plans",
+        "pricing_paragraphe": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+        "starter": {
+            "title": "Starter",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Start Free Trial",
+            "price": "0"
+        },
+        "exclusive": {
+            "title": "Exclusive",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Purchase Now",
+            "price": "99"
+        },
+        "premium": {
+            "title": "Premium",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
+            "features": [
+                {
+                    "text": "Cras justo odio.",
+                    "included": true
+                },
+                {
+                    "text": "Dapibus ac facilisis in.",
+                    "included": true
+                },
+                {
+                    "text": "Morbi leo risus.",
+                    "included": false
+                },
+                {
+                    "text": "Excepteur sint occaecat velit.",
+                    "included": false
+                }
+            ],
+            "btn_text": "Purchase Now",
+            "price": "150"
+        }
+    }
+}
