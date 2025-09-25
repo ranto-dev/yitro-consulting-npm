@@ -4,8 +4,9 @@ import HeroBlog from "../../components/blog/HeroBlog";
 import Content from "../../components/blog/Content";
 import Contact from "../../components/home/Contact";
 import Footer from "../../components/home/Footer";
+import type { lang } from "../../components/home/Portfolio";
 
-export default function AllBlogs() {
+export default function AllBlogs({lang}: lang) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -43,7 +44,7 @@ export default function AllBlogs() {
         <NavbarBlog />
         <HeroBlog />
         <Content />
-        <Contact />
+        <Contact lang={lang} />
         <Footer />
       </div>
     </>

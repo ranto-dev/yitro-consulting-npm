@@ -4,7 +4,7 @@ import Hero from "../../components/home/Hero";
 import About from "../../components/home/About";
 import Services from "../../components/home/Services";
 import IntroVideo from "../../components/home/IntroVideo";
-import Portfolio from "../../components/home/Portfolio";
+import Portfolio, { type lang } from "../../components/home/Portfolio";
 import Pricing from "../../components/home/Pricing";
 import CallToAction from "../../components/home/CallToAction";
 import Team from "../../components/home/Team";
@@ -13,9 +13,8 @@ import Contact from "../../components/home/Contact";
 import Footer from "../../components/home/Footer";
 import ScrollToTopButton from "../../components/home/ScrollToTopButton";
 
-export default function Home() {
+export default function Home({lang}: lang) {
   const [isLoading, setIsLoading] = useState(true);
-  const [lang, setLang] = useState("eng");
 
   useEffect(() => {
     const timer = setTimeout(() => {

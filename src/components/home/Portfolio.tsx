@@ -7,55 +7,13 @@ import portfolio5 from "../../assets/img/portfolio/portfolio-5.jpg";
 import portfolio6 from "../../assets/img/portfolio/portfolio-6.jpg";
 import { FaLink, FaMagnifyingGlassPlus } from "react-icons/fa6";
 import traduction from "../../traduction/portfolio.json";
-// const portfolioItems = [
-//   {
-//     image: portfolio1,
-//     title: "Graphics Design",
-//     description:
-//       "Short description for the ones who look for something new. Awesome!",
-//     filter: "branding",
-//   },
-//   {
-//     image: portfolio2,
-//     title: "Web Development",
-//     description:
-//       "Short description for the ones who look for something new. Awesome!",
-//     filter: "planning",
-//   },
-//   {
-//     image: portfolio3,
-//     title: "App Development",
-//     description:
-//       "Short description for the ones who look for something new. Awesome!",
-//     filter: "marketing",
-//   },
-//   {
-//     image: portfolio4,
-//     title: "Digital Marketing",
-//     description:
-//       "Short description for the ones who look for something new. Awesome!!",
-//     filter: "marketing",
-//   },
-//   {
-//     image: portfolio5,
-//     title: "SEO Services",
-//     description:
-//       "Short description for the ones who look for something new. Awesome!",
-//     filter: "marketing",
-//   },
-//   {
-//     image: portfolio6,
-//     title: "Product Design",
-//     description:
-//       "Short description for the ones who look for something new. Awesome!",
-//     filter: "branding",
-//   },
-// ];
-interface lang {
+
+export interface lang {
   lang: string
 }
 const Portfolio = ({ lang }: lang) => {
   const [activeFilter, setActiveFilter] = useState("all");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [portfolioItems, _] = useState([
     {
       image: portfolio1,
