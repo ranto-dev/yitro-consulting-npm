@@ -4,7 +4,7 @@ import blog2 from "../../assets/img/thumbnail/thumbnail-2.jpg";
 import blog3 from "../../assets/img/thumbnail/thumbnail-3.jpg";
 import { useState } from "react";
 import type { BlogPost } from "../../types/BlogPost";
-import { FaCalendarDay, FaUser } from "react-icons/fa6";
+import { FaCalendarDay } from "react-icons/fa6";
 
 const Blog = () => {
   const [blogPosts] = useState<BlogPost[]>([

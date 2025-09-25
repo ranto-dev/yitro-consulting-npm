@@ -1,14 +1,17 @@
+import { useState } from "react";
 import AllBlogs from "./pages/client/Blog";
 import Home from "./pages/client/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 export default function App() {
+  const [lang, setLang] = useState("eng");
+
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <>
-          <Home />
+          <Home lang={lang} />
         </>
       ),
     },
@@ -16,7 +19,7 @@ export default function App() {
       path: "/blog",
       element: (
         <>
-          <AllBlogs />
+          <AllBlogs lang={lang} />
         </>
       ),
     },

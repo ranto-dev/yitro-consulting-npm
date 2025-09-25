@@ -51,7 +51,7 @@ import traduction from "../../traduction/portfolio.json";
 //     filter: "branding",
 //   },
 // ];
-interface lang {
+export interface lang {
   lang: string
 }
 const Portfolio = ({ lang }: lang) => {
