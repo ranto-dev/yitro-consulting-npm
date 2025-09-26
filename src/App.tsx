@@ -2,6 +2,8 @@ import { useState } from "react";
 import AllBlogs from "./pages/client/Blog";
 import Home from "./pages/client/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Login from "./pages/admin/Login";
+import Dashboard from "./pages/admin/Dashboard";
 
 export default function App() {
   const [lang, setLang] = useState("eng");
@@ -23,6 +25,22 @@ export default function App() {
       element: (
         <>
           <AllBlogs lang={lang} />
+        </>
+      ),
+    },
+    {
+      path: "/admin/login",
+      element: (
+        <>
+          <Login lang={lang} />
+        </>
+      ),
+    },
+    {
+      path: "/admin/dashboard",
+      element: (
+        <>
+          <Dashboard />
         </>
       ),
     },
