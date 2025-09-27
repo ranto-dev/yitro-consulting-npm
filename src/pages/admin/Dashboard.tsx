@@ -4,7 +4,7 @@ import Content from "../../components/blog/Content";
 export default function Dashboard() {
   return (
     <div className="w-full">
-      <div className="flex justify-between items-center p-4">
+      <div className="flex justify-between items-center p-4 sticky top-0 shadow-[2rem] " style={{ borderBottom: "1rem" }}>
         <div>
           <h1 className="text-sm">Blog Admin</h1>
         </div>
