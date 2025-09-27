@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import type { BlogPost } from "../../types/BlogPost";
 import blog1 from "../../assets/img/thumbnail/thumbnail-1.jpg";
 import blog2 from "../../assets/img/thumbnail/thumbnail-2.jpg";
 import blog3 from "../../assets/img/thumbnail/thumbnail-3.jpg";
-import { motion } from "framer-motion";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaTimes } from "react-icons/fa";
+import BlogDetails from "./BlogDetails";
 
 const Content: React.FC = () => {
   const [blogPosts] = useState<BlogPost[]>([
@@ -17,7 +16,6 @@ const Content: React.FC = () => {
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "Jan 28, 2025",
-      link: "blog-details.html",
     },
     {
       id: 2,
@@ -27,7 +25,6 @@ const Content: React.FC = () => {
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "Jan 28, 2025",
-      link: "blog-details.html",
     },
     {
       id: 3,
@@ -37,7 +34,6 @@ const Content: React.FC = () => {
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "Jan 28, 2025",
-      link: "blog-details.html",
     },
     {
       id: 4,
@@ -47,7 +43,6 @@ const Content: React.FC = () => {
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "Jan 28, 2025",
-      link: "blog-details.html",
     },
     {
       id: 5,
@@ -57,7 +52,6 @@ const Content: React.FC = () => {
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "Jan 28, 2025",
-      link: "blog-details.html",
     },
     {
       id: 6,
@@ -67,14 +61,13 @@ const Content: React.FC = () => {
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "Jan 28, 2025",
-      link: "blog-details.html",
     },
   ]);
 
-  const cardVariants = {
-    hidden: { opacity: 0, x: 20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
+  const [display, setDisplay] = useState<boolean>(false);
+
+  const handleModal = () => {
+    setDisplay(!display);
   };
 
   return (
@@ -102,38 +95,52 @@ const Content: React.FC = () => {
       </div>
       <div className="w-full grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {blogPosts.map((post) => (
-          <motion.div
-            key={post.id}
-            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 ease-in-out"
-            variants={cardVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <span className="text-sm text-gray-500 uppercase font-semibold">
-                {post.category}
-              </span>
-              <h2 className="text-xl font-bold my-2">{post.title}</h2>
-              <p className="text-gray-600 text-sm">{post.excerpt}</p>
-              <div className="flex justify-end items-center mt-4 text-sm text-gray-400">
-                <span>{post.date}</span>
-              </div>
-              <div className="mt-4">
-                <Link
-                  to={post.link}
-                  className="inline-block text-indigo-600 hover:text-indigo-800 transition font-medium"
-                >
-                  Learn More →
-                </Link>
+          <>
+            <div
+              key={post.id}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 ease-in-out"
+            >
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <span className="text-sm text-gray-500 uppercase font-semibold">
+                  {post.category}
+                </span>
+                <h2 className="text-xl font-bold my-2">{post.title}</h2>
+                <p className="text-gray-600 text-sm">{post.excerpt}</p>
+                <div className="flex justify-end items-center mt-4 text-sm text-gray-400">
+                  <span>{post.date}</span>
+                </div>
+                <div className="mt-4">
+                  <button
+                    onClick={handleModal}
+                    className="inline-block text-indigo-600 hover:text-indigo-800 transition font-medium"
+                  >
+                    Learn More →
+                  </button>
+                </div>
               </div>
             </div>
-          </motion.div>
+            <div
+              className={`absolute z-50 bg-primary p-8 m-auto ${
+                display === true ? "block" : "hidden"
+              } `}
+            >
+              <div className="modal-content w-[100%]">
+                <div className="flex justify-end">
+                  <button onClick={handleModal}>
+                    <FaTimes />
+                  </button>
+                </div>
+                <div className="modal-body">
+                  <BlogDetails post={post} />
+                </div>
+              </div>
+            </div>
+          </>
         ))}
       </div>
     </div>
