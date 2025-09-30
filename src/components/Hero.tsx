@@ -1,8 +1,24 @@
 import heroImage from "../assets/img/hero.jpg";
 import dots from "../assets/img/dots.svg";
 import { FaPlay } from "react-icons/fa6";
+import { useState } from "react";
 
 const Hero = () => {
+  const [, setIsMenuOpen] = useState(false);
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute("href");
+
+    if (href) {
+      const targetElement = document.querySelector<HTMLElement>(href);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <section
       id="home"
@@ -24,7 +40,8 @@ const Hero = () => {
               <ul className="mb-10 flex flex-wrap items-center justify-center gap-4 md:gap-5">
                 <li>
                   <a
-                    href="javascript:void(0)"
+                    href="#contact"
+                    onClick={handleLinkClick}
                     className="inline-flex items-center justify-center rounded-md bg-primary-color text-primary px-5 py-3 text-center text-base font-medium shadow-md hover:bg-primary-light-5 md:px-7 md:py-[14px]"
                     role="button"
                   >

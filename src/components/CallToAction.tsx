@@ -1,4 +1,21 @@
+import { useState } from "react";
+
 const CallToAction = () => {
+  const [, setIsMenuOpen] = useState(false);
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute("href");
+
+    if (href) {
+      const targetElement = document.querySelector<HTMLElement>(href);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <section
       id="call-action"
@@ -16,7 +33,8 @@ const CallToAction = () => {
             off his nut.
           </p>
           <a
-            href="javascript:void(0)"
+            href="#contact"
+            onClick={handleLinkClick}
             className="inline-block px-5 py-3 rounded-md mt-11 bg-green-400 text-white hover:bg-green-500 hover:text-white focus:bg-green-500 focus:text-white"
             role="button"
           >

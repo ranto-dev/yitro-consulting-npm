@@ -15,6 +15,11 @@ import Blog from "./components/Blog";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [lang, setLang] = useState("fr");
+
+  const handleChangeLang = () => {
+    setLang(lang === "fr" ? "en" : "fr");
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -46,6 +51,13 @@ function App() {
           </div>
         </div>
       )}
+
+      <button
+        className={`fixed bottom-8 left-8 z-[99] w-12 h-12 border rounded-full bg-primary text-white flex items-center justify-center transition-all duration-300`}
+        onClick={handleChangeLang}
+      >
+        {lang}
+      </button>
 
       <Navbar />
       <div className="main relative">
