@@ -1,6 +1,33 @@
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
 
 const Contact = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    const response = await fetch("http://localhost:3001/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      alert("Email envoyé avec succès !");
+      form.reset();
+    } else {
+      alert("Erreur lors de l’envoi.");
+    }
+  };
+
   return (
     <section id="contact" className="section-area">
       <div className="container">
@@ -19,7 +46,7 @@ const Contact = () => {
           {/* Formulaire de contact */}
           <div className="col-span-2">
             <div className="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 p-8 shadow-card-1 hover:shadow-lg">
-              <form action="#" className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <input
