@@ -1,7 +1,7 @@
 import blog1 from "../assets/img/thumbnail/thumbnail-1.jpg";
 import blog2 from "../assets/img/thumbnail/thumbnail-2.jpg";
 import blog3 from "../assets/img/thumbnail/thumbnail-3.jpg";
-import { useState } from "react"; 
+import { useState } from "react";
 // import { FaUser } from "react-icons/fa6";
 
 interface BlogPost {
@@ -108,6 +108,15 @@ const Blog = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex justify-end py-8">
+          <a
+            href="#"
+            className="px-4 py-2 bg-primary text-white rounded-md shadow-lg
+                   hover:scale-110 hover:text-white hover:-translate-y-1 transition-all duration-300 ease-in-out"
+          >
+            See more
+          </a>
         </div>
       </div>
     </section>
