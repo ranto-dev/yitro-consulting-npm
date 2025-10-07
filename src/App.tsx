@@ -12,27 +12,42 @@ import Team from "./components/Team";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Blog from "./components/Blog";
+import "./utils/i18n";
+import i18n from "./utils/i18n";
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [lang, setLang] = useState("fr");
   const [blogs, setBlogs] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [lang, setLang] = useState("fr");
+
+  const handleChangeLang = () => {
+    setLang(lang === "fr" ? "en" : "fr");
+    setIsLoading(true);
+    i18n.changeLanguage(lang);
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const abortController = new AbortController();
 
-    fetch("https://blog.yitro-consulting.com/article", {
+    fetch("/blogs.json", {
       method: "GET",
       signal: abortController.signal,
     })
       .then((response) => response.json())
       .then((response_json) => {
-        console.log(response_json)
+        console.log(response_json);
         setBlogs(response_json);
-        const timer = setTimeout(() => {
-          setIsLoading(false);
-        }, 1000);
-        return () => clearTimeout(timer);
       })
       .catch((error) => {
         if (error.name === "AbortError") {
@@ -46,10 +61,6 @@ export default function App() {
       abortController.abort();
     };
   }, []);
-
-  const handleChangeLang = () => {
-    setLang(lang === "fr" ? "en" : "fr");
-  };
 
   return (
     <div className="overflow-hidden">

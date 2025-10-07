@@ -1,4 +1,5 @@
 import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,23 +30,56 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-area">
+    <section id="contact" className="section-area overflow-hidden">
       <div className="container">
         <div className="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
-          <h6 className="mb-2 block text-lg font-semibold text-primary">
+          <motion.h6
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.2,
+            }}
+            className="mb-2 block text-lg font-semibold text-primary"
+          >
             Contact
-          </h6>
-          <h2 className="mb-6">Contact Us</h2>
-          <p>
+          </motion.h6>
+          <motion.h2
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.4,
+            }}
+            className="mb-6"
+          >
+            Contact Us
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.6,
+            }}
+          >
             There are many variations of passages of Lorem Ipsum available but
             the majority have suffered alteration in some form.
-          </p>
+          </motion.p>
         </div>
 
         <div className="scroll-revealed row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Formulaire de contact */}
           <div className="col-span-2">
-            <div className="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 p-8 shadow-card-1 hover:shadow-lg">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+              className="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 p-8 shadow-card-1 hover:shadow-lg"
+            >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
@@ -94,19 +128,54 @@ const Contact = () => {
                   </button>
                 </div>
               </form>
-            </div>
+            </motion.div>
           </div>
-          {/* Informations de contact */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-1">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.2,
+            }}
+            className="col-span-1 md:col-span-2 lg:col-span-1"
+          >
             <div className="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 p-8 shadow-card-1 hover:shadow-lg">
-              <h4 className="text-xl font-semibold text-body-light-12 dark:text-body-dark-12 mb-4">
+              <motion.h4
+                initial={{ opacity: 0, y: -100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  delay: 0.4,
+                }}
+                className="text-xl font-semibold text-body-light-12 dark:text-body-dark-12 mb-4"
+              >
                 Our Information
-              </h4>
-              <p className="text-body-light-11 dark:text-body-dark-11 mb-6">
+              </motion.h4>
+              <motion.p
+                initial={{ opacity: 0, y: -100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  delay: 0.6,
+                }}
+                className="text-body-light-11 dark:text-body-dark-11 mb-6"
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <ul className="space-y-4">
+              </motion.p>
+              <motion.ul
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  delay: 0.8,
+                }}
+                className="space-y-4"
+              >
                 <li className="flex items-start gap-4">
                   <FaLocationDot />
                   <p className="text-body-light-11 dark:text-body-dark-11">
@@ -125,9 +194,9 @@ const Contact = () => {
                     +261 34 92 510 45 / +261 34 53 313 87
                   </p>
                 </li>
-              </ul>
+              </motion.ul>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [theme, setTheme] = useState("light");
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -21,9 +22,7 @@ const Navbar = () => {
     const savedTheme = localStorage.getItem("Inazuma_WebTheme") || "light";
     setTheme(savedTheme);
 
-    const handleScroll = () => {
-      setIsSticky(window.scrollY >= 72);
-    };
+    const handleScroll = () => setIsSticky(window.scrollY >= 72);
 
     const handleScrollspy = () => {
       const links =
@@ -66,7 +65,6 @@ const Navbar = () => {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const href = e.currentTarget.getAttribute("href");
-
     if (href) {
       const targetElement = document.querySelector<HTMLElement>(href);
       if (targetElement) {
@@ -76,13 +74,23 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  const navItems = [
+    "home",
+    "services",
+    "portfolio",
+    "pricing",
+    "team",
+    "blog",
+    "contact",
+  ];
+
   return (
     <AnimatePresence>
       <motion.header
         initial={{ y: 0, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 100, damping: 15 }}
-        className={`ic-navbar left-0 top-0 z-40 flex w-full items-center ${
+        className={`ic-navbar left-0 top-0 z-40 flex w-full items-center overflow-hidden ${
           isSticky
             ? "sticky bg-white/90 shadow-md dark:bg-primary-dark-1"
             : "absolute bg-transparent"
@@ -126,15 +134,7 @@ const Navbar = () => {
                     role="menu"
                     aria-label="Navigation menu"
                   >
-                    {[
-                      "Home",
-                      "Services",
-                      "Portfolio",
-                      "Pricing",
-                      "Team",
-                      "Blog",
-                      "Contact",
-                    ].map((item, index) => (
+                    {navItems.map((item, index) => (
                       <motion.li
                         initial={{ opacity: 0, y: 100 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -147,12 +147,12 @@ const Navbar = () => {
                         className="group relative"
                       >
                         <a
-                          href={`#${item.toLowerCase()}`}
+                          href={`#${item}`}
                           className="ic-page-scroll mx-8 flex py-2 text-base text-body-light-12 group-hover:text-primary dark:text-body-dark-12 lg:mx-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-primary-color lg:dark:text-primary-color lg:group-hover:text-primary-color lg:group-hover:opacity-70"
                           role="menuitem"
                           onClick={handleLinkClick}
                         >
-                          {item}
+                          {t(`navbar.links.${item}`)}
                         </a>
                       </motion.li>
                     ))}
@@ -187,7 +187,7 @@ const Navbar = () => {
                     className="btn-navbar ml-5 px-6 py-3 rounded-md bg-primary-color bg-opacity-20 text-base font-medium text-primary-color hover:bg-opacity-100 hover:text-primary"
                     role="button"
                   >
-                    Get Started
+                    {t("navbar.getStarted")}
                   </motion.a>
                 </div>
               </div>

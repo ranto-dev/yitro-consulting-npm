@@ -74,7 +74,7 @@ const Portfolio = () => {
       : portfolioItems.filter((item) => item.filter === activeFilter);
 
   return (
-    <section id="portfolio" className="section-area">
+    <section id="portfolio" className="section-area overflow-hidden">
       <div className="container">
         <div className="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
           <motion.h6

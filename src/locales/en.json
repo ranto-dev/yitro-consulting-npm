@@ -1,0 +1,22 @@
+{
+  "navbar": {
+    "links": {
+      "home": "Home",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "pricing": "Pricing",
+      "team": "Team",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "Welcome to Yitro Consulting",
+    "description": "Yitro Consulting is a company working in digital transformation.",
+    "buttons": {
+      "start": "Get Started",
+      "intro": "Intro Video"
+    }
+  }
+}

@@ -1,73 +1,125 @@
 import { motion } from "framer-motion";
 import { FaCalendar, FaEye } from "react-icons/fa6";
+import { useState, useEffect } from "react";
+import selectRandomObjects from "../utils/selectRandomObjects";
 
-interface BlogPost {
+interface Blog {
   id: number;
-  image: string;
-  category: string;
   title: string;
   excerpt: string;
-  author: string;
+  image: string;
+  image_annexe: string[];
+  category: string[];
+  star: number;
   date: string;
-  link: string;
 }
 
 const Blog = ({ blogs }) => {
+  const [randomBlogs, setRandomBlogs] = useState([]);
+  const NUMBER_OF_BLOGS = 3;
+
+  useEffect(() => {
+    if (blogs && blogs.length > 0) {
+      const count = Math.min(NUMBER_OF_BLOGS, blogs.length);
+      const selected = selectRandomObjects(blogs, count);
+      setRandomBlogs(selected);
+    }
+  }, [blogs]);
+
   return (
-    <section>
-      <div className="w-full grid md:grid-cols-2 gap-6 lg:grid-cols-3 p-6">
-        {blogs.map((blog) => (
-          <motion.div
+    <section id="blog" className="section-area overflow-hidden">
+      <div className="container">
+        <div className="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
+          <motion.h6
             initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{
               type: "spring",
               stiffness: 100,
-              delay: blog.id / 100,
+              delay: 0.2,
             }}
-            whileHover={{ scale: 1.02 }}
-            key={blog.id}
-            className="flex flex-col gap-6 rounded-xl bg-blue-500/10 shadow-xl relative group overflow-hidden"
+            className="mb-2 block text-lg font-semibold text-primary"
           >
-            <div className="w-full relative">
-              <div
-                className={`p-1 rounded-lg absolute top-0 left-0 w-full h-full flex gap-2 justify-center items-center z-20 
-                 opacity-0 group-hover:opacity-100 
-                 transform translate-y-4 group-hover:translate-y-0
-                 transition-all duration-300 ease-in-out`}
-              >
+            Blog
+          </motion.h6>
+          <motion.h2
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.4,
+            }}
+            className="mb-6"
+          >
+            Latest News
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.6,
+            }}
+          >
+            There are many variations of passages of Lorem Ipsum available but
+            the majority have suffered alteration in some form.
+          </motion.p>
+        </div>
+
+        <div className="scroll-revealed grid gap-8 lg:grid-cols-3">
+          {randomBlogs.map((blog: Blog) => (
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ translateY: -10 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                delay: blog.id / 10,
+                translateY: { duration: 0.2 },
+              }}
+              key={blog.id}
+              className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl"
+            >
+              <div className="w-full h-48 relative overflow-hidden">
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-full object-cover transition"
+                />
+              </div>
+
+              <div className="flex flex-col gap-4 p-6">
+                <h3 className="text-xl font-semibold text-gray-900 group-hover:translate-y-2.5">
+                  {blog.title}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {blog.excerpt
+                    ? `${blog.excerpt.slice(0, 120)}...`
+                    : "Pas de contenu disponible..."}
+                </p>
                 <a
-                  href={`#`}
-                  className={`bg-black/40 cursor-pointer text-blue-500 p-2 rounded-full text-lg 
-                    transition duration-300 hover:bg-black/70 flex justify-center items-center gap-2`}
+                  href={`/blog/${blog.id}`}
+                  className="flex gap-1 items-center text-blue-600 font-medium hover:text-blue-800"
                 >
                   <FaEye />
-                  <span>Voir plus</span>
+                  <span>Show</span>
                 </a>
               </div>
-              <img
-                src={blog.image}
-                alt={"image du publication n°" + blog.id}
-                className={`w-full h-[300px] rounded-t-xl object-cover border-none 
-                  transition-all duration-300 ease-in-out 
-                  group-hover:blur-xs`}
-              />
-            </div>
-            <div className="space-y-4 p-4">
-              <p className="text-2xl">{blog.title}</p>
-              <p>
-                {blog.excerpt.slice(0, 100)}
-                {blog.excerpt.length <= 100 ? null : "..."}
-              </p>
-              <div className="flex justify-between items-center">
-                <p>{"⭐".repeat(blog.star)}</p>
-                <p className="flex gap-2 justify-center items-center text-gray-500">
-                  <FaCalendar /> {blog.datePublication}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
+        <div className="flex justify-end py-8">
+          <a
+            href="#"
+            className="px-4 py-2 bg-primary text-white rounded-md shadow-lg
+                   hover:scale-110 hover:text-white hover:-translate-y-1 transition-all duration-300 ease-in-out"
+          >
+            See more
+          </a>
+        </div>
       </div>
     </section>
   );

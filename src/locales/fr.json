@@ -1,0 +1,22 @@
+{
+  "navbar": {
+    "links": {
+      "home": "Accueil",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "pricing": "Tarifs",
+      "team": "Équipe",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "getStarted": "Commencer"
+  },
+  "hero": {
+    "title": "Bienvenue sur Yitro Consulting",
+    "description": "Yitro Consulting est une entreprise oeuvrant dans la transformation digitale.",
+    "buttons": {
+      "start": "Commencer",
+      "intro": "Vidéo intro"
+    }
+  }
+}

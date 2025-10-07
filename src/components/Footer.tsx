@@ -1,11 +1,27 @@
-import { FaLocationArrow } from "react-icons/fa6";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaLocationArrow,
+  FaTwitter,
+} from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 bg-body-light-1 dark:bg-body-dark-12/10 pt-20 lg:pt-24 pb-8 border-t border-body-light-6 dark:border-body-dark-6">
+    <footer className="relative z-10 bg-body-light-1 dark:bg-body-dark-12/10 pt-20 lg:pt-24 pb-8 border-t border-body-light-6 dark:border-body-dark-6 overflow-hidden">
       <div className="container">
         <div className="row flex flex-wrap -mx-4">
-          <div className="w-full md:w-1/2 lg:w-4/12 px-4 mb-10 md:mb-0">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.2,
+            }}
+            className="w-full md:w-1/2 lg:w-4/12 px-4 mb-10 md:mb-0"
+          >
             <div className="scroll-revealed mb-4">
               <a href="#">Yitro-consulting</a>
             </div>
@@ -19,7 +35,7 @@ const Footer = () => {
                   href="#"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-body-light-2 dark:bg-body-dark-2 text-primary hover:bg-primary hover:text-primary-color"
                 >
-                  <i className="lni lni-facebook-fill"></i>
+                  <FaFacebook />
                 </a>
               </li>
               <li>
@@ -27,7 +43,7 @@ const Footer = () => {
                   href="#"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-body-light-2 dark:bg-body-dark-2 text-primary hover:bg-primary hover:text-primary-color"
                 >
-                  <i className="lni lni-twitter-original"></i>
+                  <FaTwitter />
                 </a>
               </li>
               <li>
@@ -35,7 +51,7 @@ const Footer = () => {
                   href="#"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-body-light-2 dark:bg-body-dark-2 text-primary hover:bg-primary hover:text-primary-color"
                 >
-                  <i className="lni lni-instagram-original"></i>
+                  <FaInstagram />
                 </a>
               </li>
               <li>
@@ -43,12 +59,22 @@ const Footer = () => {
                   href="#"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-body-light-2 dark:bg-body-dark-2 text-primary hover:bg-primary hover:text-primary-color"
                 >
-                  <i className="lni lni-linkedin-fill"></i>
+                  <FaLinkedin />
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="w-full md:w-1/2 lg:w-2/12 px-4 mb-10 md:mb-0">
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.2,
+            }}
+            className="w-full md:w-1/2 lg:w-2/12 px-4 mb-10 md:mb-0"
+          >
             <h4 className="scroll-revealed text-xl font-semibold text-body-light-12 dark:text-body-dark-12 mb-4">
               Quick Links
             </h4>
@@ -94,8 +120,18 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="w-full md:w-1/2 lg:w-3/12 px-4 mb-10 md:mb-0">
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.2,
+            }}
+            className="w-full md:w-1/2 lg:w-3/12 px-4 mb-10 md:mb-0"
+          >
             <h4 className="scroll-revealed text-xl font-semibold text-body-light-12 dark:text-body-dark-12 mb-4">
               Support
             </h4>
@@ -125,8 +161,18 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="w-full md:w-1/2 lg:w-3/12 px-4 mb-10 md:mb-0">
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.2,
+            }}
+            className="w-full md:w-1/2 lg:w-3/12 px-4 mb-10 md:mb-0"
+          >
             <h4 className="scroll-revealed text-xl font-semibold text-body-light-12 dark:text-body-dark-12 mb-4">
               Subscribe
             </h4>
@@ -146,14 +192,23 @@ const Footer = () => {
                 <FaLocationArrow />
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="bg-body-light-1 dark:bg-body-dark-12/10 pt-8 mt-12 text-center">
         <div className="container">
-          <p className="text-sm text-body-light-11 dark:text-body-dark-11">
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: -10 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.2,
+            }}
+            className="text-sm text-body-light-11 dark:text-body-dark-11"
+          >
             © 2025 Yitro Consulting. All rights reserved.
-          </p>
+          </motion.p>
         </div>
       </div>
     </footer>

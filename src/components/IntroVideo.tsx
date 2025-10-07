@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const IntroVideo = () => {
   return (
-    <section id="intro" className="section-area">
+    <section id="intro" className="section-area overflow-hidden">
       <div className="container">
         <div className="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
           <motion.h6

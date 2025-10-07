@@ -17,7 +17,7 @@ const teamMembers = [
 
 const Team = () => {
   return (
-    <section id="team" className="section-area">
+    <section id="team" className="section-area overflow-hidden">
       <div className="container">
         <div className="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
           <motion.h6
