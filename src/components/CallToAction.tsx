@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const CallToAction = () => {
   const [, setIsMenuOpen] = useState(false);
@@ -19,9 +20,14 @@ const CallToAction = () => {
   return (
     <section
       id="call-action"
-      className="section-area !bg-primary !text-primary-color"
+      className="section-area !bg-primary !text-primary-color overflow-hidden"
     >
-      <div className="container">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+        className="container"
+      >
         <div className="scroll-revealed text-center max-w-[550px] mx-auto">
           <h2 className="mb-8 text-inherit">
             We love to make perfect solutions for your business
@@ -41,7 +47,7 @@ const CallToAction = () => {
             Get Started Now
           </a>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

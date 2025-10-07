@@ -1,5 +1,6 @@
 import { useState } from "react";
 import aboutImage from "../assets/img/about-img.jpg";
+import { motion } from "framer-motion";
 
 const tabsData = [
   {
@@ -72,15 +73,33 @@ const About = () => {
   const [activeTab, setActiveTab] = useState("tabs-panel-profile");
 
   return (
-    <section id="about" className="section-area">
+    <section id="about" className="section-area overflow-hidden">
       <div className="container">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2">
           <div className="w-full">
-            <figure className="scroll-revealed max-w-[480px] mx-auto">
+            <motion.figure
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                delay: 0.2,
+              }}
+              className="scroll-revealed max-w-[480px] mx-auto"
+            >
               <img src={aboutImage} alt="About image" className="rounded-xl" />
-            </figure>
+            </motion.figure>
           </div>
-          <div className="w-full">
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.2,
+            }}
+            className="w-full"
+          >
             <div className="scroll-revealed">
               <h6 className="mb-2 block text-lg font-semibold text-primary">
                 About Us
@@ -115,7 +134,7 @@ const About = () => {
                 {tabsData.find((tab) => tab.id === activeTab)?.content}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

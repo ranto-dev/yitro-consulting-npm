@@ -1,4 +1,5 @@
 import { FaRegCircleCheck } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const pricingPlans = [
   {
@@ -47,22 +48,48 @@ const pricingPlans = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="section-area">
+    <section id="pricing" className="section-area overflow-hidden">
       <div className="container">
         <div className="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
-          <h6 className="mb-2 block text-lg font-semibold text-primary">
+          <motion.h6
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+            className="mb-2 block text-lg font-semibold text-primary"
+          >
             Pricing
-          </h6>
-          <h2 className="mb-6">Pricing & Plans</h2>
-          <p>
+          </motion.h6>
+          <motion.h2
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
+            className="mb-6"
+          >
+            Pricing & Plans
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
+          >
             There are many variations of passages of Lorem Ipsum available but
             the majority have suffered alteration in some form.
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {pricingPlans.map((plan, index) => (
-            <div key={index} className="scroll-revealed">
+            <motion.div
+              initial={{ opacity: 0, x: Math.random() > 0.5 ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                delay: index / 5,
+              }}
+              key={index}
+              className="scroll-revealed"
+            >
               <div
                 className={`rounded-xl py-12 px-9 text-center shadow-card-1 hover:shadow-lg
                   ${
@@ -129,7 +156,7 @@ const Pricing = () => {
                   </ul>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

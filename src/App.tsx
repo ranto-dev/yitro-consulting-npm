@@ -13,23 +13,46 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Blog from "./components/Blog";
 
-function App() {
+export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [lang, setLang] = useState("fr");
+  const [blogs, setBlogs] = useState(null);
+
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    fetch("https://blog.yitro-consulting.com/article", {
+      method: "GET",
+      signal: abortController.signal,
+    })
+      .then((response) => response.json())
+      .then((response_json) => {
+        console.log(response_json)
+        setBlogs(response_json);
+        const timer = setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
+        return () => clearTimeout(timer);
+      })
+      .catch((error) => {
+        if (error.name === "AbortError") {
+          console.log("Fetch annulé");
+        } else {
+          console.error("Erreur lors du fetch:", error);
+        }
+      });
+
+    return () => {
+      abortController.abort();
+    };
+  }, []);
 
   const handleChangeLang = () => {
     setLang(lang === "fr" ? "en" : "fr");
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <>
+    <div className="overflow-hidden">
       {isLoading && (
         <div
           className="page-loading fixed top-0 bottom-0 left-0 right-0 z-[99999] flex items-center justify-center bg-primary-light-1 dark:bg-primary-dark-1 opacity-100 visible pointer-events-auto"
@@ -69,14 +92,11 @@ function App() {
         <Pricing />
         <CallToAction />
         <Team />
-        {/* <Testimonials /> */}
-        <Blog />
+        <Blog blogs={blogs} />
         <Contact />
       </div>
       <Footer />
       <ScrollToTopButton />
-    </>
+    </div>
   );
 }
-
-export default App;

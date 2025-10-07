@@ -1,4 +1,5 @@
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
+import { motion } from "framer-motion";
 import avatar1 from "../assets/img/avatar/avatar-1.jpg";
 import avatar2 from "../assets/img/avatar/avatar-2.jpg";
 import avatar3 from "../assets/img/avatar/avatar-3.jpg";
@@ -19,20 +20,42 @@ const Team = () => {
     <section id="team" className="section-area">
       <div className="container">
         <div className="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
-          <h6 className="mb-2 block text-lg font-semibold text-primary">
+          <motion.h6
+            initial={{ opacity: 0, y: -110 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+            className="mb-2 block text-lg font-semibold text-primary"
+          >
             Team
-          </h6>
-          <h2 className="mb-6">Our Creative Team</h2>
-          <p>
+          </motion.h6>
+          <motion.h2
+            initial={{ opacity: 0, y: -110 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
+            className="mb-6"
+          >
+            Our Creative Team
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -110 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
+          >
             There are many variations of passages of Lorem Ipsum available but
             the majority have suffered alteration in some form.
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {teamMembers.map((member, index) => (
-            <div key={index} className="scroll-revealed">
-              <figure className="group rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 pb-10 pt-12 shadow-card-2 hover:shadow-lg hover:-translate-y-1">
+            <motion.div
+              initial={{ opacity: 0, x: Math.random() > 0.5 ? 100 : -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "spring", stiffness: 100, delay: index / 5 }}
+              key={index}
+              className="scroll-revealed"
+            >
+              <figure className="group rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 px-5 pb-10 pt-12 shadow-card-2 hover:shadow-lg hover:-translate-y-1 duration-200 ease-in">
                 <div className="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
                   <img
                     src={member.image}
@@ -71,7 +94,7 @@ const Team = () => {
                   </div>
                 </figcaption>
               </figure>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

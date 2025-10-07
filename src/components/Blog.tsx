@@ -1,8 +1,5 @@
-import blog1 from "../assets/img/thumbnail/thumbnail-1.jpg";
-import blog2 from "../assets/img/thumbnail/thumbnail-2.jpg";
-import blog3 from "../assets/img/thumbnail/thumbnail-3.jpg";
-import { useState } from "react";
-// import { FaUser } from "react-icons/fa6";
+import { motion } from "framer-motion";
+import { FaCalendar, FaEye } from "react-icons/fa6";
 
 interface BlogPost {
   id: number;
@@ -15,109 +12,62 @@ interface BlogPost {
   link: string;
 }
 
-const Blog = () => {
-  const [blogPosts] = useState<BlogPost[]>([
-    {
-      id: 1,
-      image: blog1,
-      category: "Consulting",
-      title: "Business Consulting Is Important for Every Business.",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      author: "Admin",
-      date: "Jan 28, 2025",
-      link: "blog-details.html",
-    },
-    {
-      id: 2,
-      image: blog2,
-      category: "Finance",
-      title: "Top 5 Tips for Better Financial Planning.",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      author: "Admin",
-      date: "Jan 28, 2025",
-      link: "blog-details.html",
-    },
-    {
-      id: 3,
-      image: blog3,
-      category: "Business",
-      title: "How to Grow Your Business with Digital Marketing.",
-      excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      author: "Admin",
-      date: "Jan 28, 2025",
-      link: "blog-details.html",
-    },
-  ]);
+const Blog = ({ blogs }) => {
   return (
-    <section id="blog" className="section-area">
-      <div className="container">
-        <div className="scroll-revealed text-center max-w-[550px] mx-auto mb-12">
-          <h6 className="mb-2 block text-lg font-semibold text-primary">
-            Blog
-          </h6>
-          <h2 className="mb-6">Latest News</h2>
-          <p>
-            There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form.
-          </p>
-        </div>
-
-        <div className="scroll-revealed grid gap-8 lg:grid-cols-3">
-          {blogPosts.map((post) => (
-            <div
-              key={post.id}
-              className="rounded-xl bg-body-light-1 dark:bg-body-dark-12/10 p-6 shadow-card-1 hover:shadow-lg"
-            >
-              <div className="group relative mb-6 overflow-hidden rounded-xl">
-                <a href={post.link} className="block">
-                  <img
-                    src={post.image}
-                    alt="image du blog"
-                    className="w-full h-auto transform group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                  />
+    <section>
+      <div className="w-full grid md:grid-cols-2 gap-6 lg:grid-cols-3 p-6">
+        {blogs.map((blog) => (
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: blog.id / 100,
+            }}
+            whileHover={{ scale: 1.02 }}
+            key={blog.id}
+            className="flex flex-col gap-6 rounded-xl bg-blue-500/10 shadow-xl relative group overflow-hidden"
+          >
+            <div className="w-full relative">
+              <div
+                className={`p-1 rounded-lg absolute top-0 left-0 w-full h-full flex gap-2 justify-center items-center z-20 
+                 opacity-0 group-hover:opacity-100 
+                 transform translate-y-4 group-hover:translate-y-0
+                 transition-all duration-300 ease-in-out`}
+              >
+                <a
+                  href={`#`}
+                  className={`bg-black/40 cursor-pointer text-blue-500 p-2 rounded-full text-lg 
+                    transition duration-300 hover:bg-black/70 flex justify-center items-center gap-2`}
+                >
+                  <FaEye />
+                  <span>Voir plus</span>
                 </a>
-                <span className="absolute bottom-6 right-6 inline-block rounded-lg bg-primary-light-3 dark:bg-primary-dark-3 py-1 px-4 text-xs font-semibold uppercase text-primary">
-                  {post.category}
-                </span>
               </div>
-              <div className="p-2">
-                <h3 className="mb-2">
-                  <a
-                    href={post.link}
-                    className="block text-xl font-bold text-body-light-12 dark:text-body-dark-12 hover:text-primary transition-colors duration-300"
-                  >
-                    {post.title}
-                  </a>
-                </h3>
-                <p className="text-base text-body-light-11 dark:text-body-dark-11 mb-4">
-                  {post.excerpt}
+              <img
+                src={blog.image}
+                alt={"image du publication n°" + blog.id}
+                className={`w-full h-[300px] rounded-t-xl object-cover border-none 
+                  transition-all duration-300 ease-in-out 
+                  group-hover:blur-xs`}
+              />
+            </div>
+            <div className="space-y-4 p-4">
+              <p className="text-2xl">{blog.title}</p>
+              <p>
+                {blog.excerpt.slice(0, 100)}
+                {blog.excerpt.length <= 100 ? null : "..."}
+              </p>
+              <div className="flex justify-between items-center">
+                <p>{"⭐".repeat(blog.star)}</p>
+                <p className="flex gap-2 justify-center items-center text-gray-500">
+                  <FaCalendar /> {blog.datePublication}
                 </p>
-                <ul className="flex flex-wrap items-center gap-4 text-base text-body-light-11 dark:text-body-dark-11">
-                  <li className="flex items-center gap-2">
-                    <i className="lni lni-user text-primary text-xl"></i>
-                    <span>by {post.author}</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <i className="lni lni-calendar text-primary text-xl"></i>
-                    <span>{post.date}</span>
-                  </li>
-                </ul>
               </div>
             </div>
-          ))}
-        </div>
-        <div className="flex justify-end py-8">
-          <a
-            href="#"
-            className="px-4 py-2 bg-primary text-white rounded-md shadow-lg
-                   hover:scale-110 hover:text-white hover:-translate-y-1 transition-all duration-300 ease-in-out"
-          >
-            See more
-          </a>
-        </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

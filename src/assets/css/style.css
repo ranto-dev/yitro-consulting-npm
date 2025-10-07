@@ -459,18 +459,6 @@ video {
 
 *,
 *::before,
-*::after {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 400ms;
-}
-
-html {
-  scroll-behavior: smooth;
-  color-scheme: light;
-  font-family: "Inter", sans-serif;
-}
-
 [data-web-theme="dark"] {
   color-scheme: dark;
 }
@@ -812,81 +800,6 @@ p + p {
   display: inline-block;
   height: 80px;
   width: 80px;
-}
-
-.grid-loader div {
-  position: absolute;
-  height: 1rem;
-  width: 1rem;
-  border-radius: 9999px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(61 99 221 / var(--tw-bg-opacity));
-  animation: grid-loader 1.2s linear infinite;
-}
-
-.grid-loader div:nth-child(1) {
-  top: 0.5rem;
-  left: 0.5rem;
-  animation-delay: 0s;
-}
-
-.grid-loader div:nth-child(2) {
-  top: 0.5rem;
-  left: 2rem;
-  animation-delay: -0.4s;
-}
-
-.grid-loader div:nth-child(3) {
-  top: 0.5rem;
-  left: 3.5rem;
-  animation-delay: -0.8s;
-}
-
-.grid-loader div:nth-child(4) {
-  top: 2rem;
-  left: 0.5rem;
-  animation-delay: -0.4s;
-}
-
-.grid-loader div:nth-child(5) {
-  top: 2rem;
-  left: 2rem;
-  animation-delay: -0.8s;
-}
-
-.grid-loader div:nth-child(6) {
-  top: 2rem;
-  left: 3.5rem;
-  animation-delay: -1.2s;
-}
-
-.grid-loader div:nth-child(7) {
-  top: 3.5rem;
-  left: 0.5rem;
-  animation-delay: -0.8s;
-}
-
-.grid-loader div:nth-child(8) {
-  top: 3.5rem;
-  left: 2rem;
-  animation-delay: -1.2s;
-}
-
-.grid-loader div:nth-child(9) {
-  top: 3.5rem;
-  left: 3.5rem;
-  animation-delay: -1.6s;
-}
-
-@keyframes grid-loader {
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
 }
 
 .ic-navbar {

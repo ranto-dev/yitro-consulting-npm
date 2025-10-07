@@ -2,6 +2,7 @@ import heroImage from "../assets/img/hero.jpg";
 import dots from "../assets/img/dots.svg";
 import { FaPlay } from "react-icons/fa6";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [, setIsMenuOpen] = useState(false);
@@ -28,34 +29,66 @@ const Hero = () => {
         <div className="-mx-5 flex flex-wrap items-center">
           <div className="w-full px-5">
             <div className="scroll-revealed mx-auto max-w-[780px] text-center">
-              <h1 className="mb-6 text-3xl font-bold leading-snug text-primary-color sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-tight">
+              <motion.h1
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  delay: 1.4,
+                }}
+                className="mb-6 text-3xl font-bold leading-snug text-primary-color sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-tight"
+              >
                 Welcome to Yitro-consulting
-              </h1>
-              <p className="mx-auto mb-9 max-w-[600px] text-base text-primary-color sm:text-lg sm:leading-normal">
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  delay: 1.6,
+                }}
+                className="mx-auto mb-9 max-w-[600px] text-base text-primary-color sm:text-lg sm:leading-normal"
+              >
                 Yitro-Consulting turns your ambitions into digital reality.
                 Tailor-made solutions that boost your visibility, engage your
                 clients, and drive your sales. From audit to delivery, we
                 support every step of your digital transformation.
-              </p>
+              </motion.p>
               <ul className="mb-10 flex flex-wrap items-center justify-center gap-4 md:gap-5">
                 <li>
-                  <a
+                  <motion.a
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 100,
+                      delay: 1.5,
+                    }}
                     href="#contact"
                     onClick={handleLinkClick}
                     className="inline-flex items-center justify-center rounded-md bg-primary-color text-primary px-5 py-3 text-center text-base font-medium shadow-md hover:bg-primary-light-5 md:px-7 md:py-[14px]"
                     role="button"
                   >
                     Get Started
-                  </a>
+                  </motion.a>
                 </li>
                 <li>
-                  <a
+                  <motion.a
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 100,
+                      delay: 1.5,
+                    }}
                     href="javascript:void(0)"
                     className="video-popup flex items-center gap-4 rounded-md bg-primary-color/[0.15] px-5 py-3 text-base font-medium text-primary-color hover:bg-primary-color hover:text-primary md:px-7 md:py-[14px]"
                     role="button"
                   >
                     <FaPlay /> Watch Intro
-                  </a>
+                  </motion.a>
                 </li>
               </ul>
             </div>
@@ -63,13 +96,22 @@ const Hero = () => {
         </div>
         <div className="w-full px-5">
           <div className="scroll-revealed relative z-10 mx-auto max-w-[845px]">
-            <figure className="mt-16">
+            <motion.figure
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                delay: 0.2,
+              }}
+              className="mt-16"
+            >
               <img
                 src={heroImage}
                 alt="Hero image"
                 className="mx-auto max-w-full rounded-t-xl rounded-tr-xl"
               />
-            </figure>
+            </motion.figure>
             <div className="absolute -left-9 bottom-0 z-[-1]">
               <img src={dots} alt="" className="w-[120px] opacity-75" />
             </div>
