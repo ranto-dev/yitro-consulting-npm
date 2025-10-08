@@ -87,7 +87,7 @@ export default function App() {
       )}
 
       <button
-        className={`fixed bottom-8 left-8 z-[99] w-12 h-12 border rounded-full bg-primary text-white flex items-center justify-center transition-all duration-300`}
+        className={`fixed bottom-8 left-8 z-[99] w-12 h-12 border rounded-full bg-primary text-white flex items-center justify-center`}
         onClick={handleChangeLang}
       >
         {lang}

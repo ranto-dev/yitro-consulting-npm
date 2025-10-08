@@ -1,8 +1,11 @@
 import { FaPlay } from "react-icons/fa6";
 import introVideoImage from "../assets/img/intro-video.jpg";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const IntroVideo = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="intro" className="section-area overflow-hidden">
       <div className="container">
@@ -13,7 +16,7 @@ const IntroVideo = () => {
             transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
             className="mb-2 block text-lg font-semibold text-primary"
           >
-            Intro Video
+            {t("introVideo.sectionTitleSmall")}
           </motion.h6>
           <motion.h2
             initial={{ opacity: 0, y: -100 }}
@@ -21,17 +24,17 @@ const IntroVideo = () => {
             transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
             className="mb-6"
           >
-            Watch Our Intro Video
+            {t("introVideo.sectionTitleBig")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
           >
-            There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form.
+            {t("introVideo.sectionDescription")}
           </motion.p>
         </div>
+
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}

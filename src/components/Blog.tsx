@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { FaCalendar, FaEye } from "react-icons/fa6";
+import { FaEye } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import selectRandomObjects from "../utils/selectRandomObjects";
+import { useTranslation } from "react-i18next";
 
 interface Blog {
   id: number;
@@ -15,7 +16,8 @@ interface Blog {
 }
 
 const Blog = ({ blogs }) => {
-  const [randomBlogs, setRandomBlogs] = useState([]);
+  const { t } = useTranslation();
+  const [randomBlogs, setRandomBlogs] = useState<Blog[]>([]);
   const NUMBER_OF_BLOGS = 3;
 
   useEffect(() => {
@@ -33,44 +35,32 @@ const Blog = ({ blogs }) => {
           <motion.h6
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              delay: 0.2,
-            }}
+            transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
             className="mb-2 block text-lg font-semibold text-primary"
           >
-            Blog
+            {t("blog.sectionTitleSmall")}
           </motion.h6>
           <motion.h2
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              delay: 0.4,
-            }}
+            transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
             className="mb-6"
           >
-            Latest News
+            {t("blog.sectionTitleBig")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              delay: 0.6,
-            }}
+            transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
           >
-            There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form.
+            {t("blog.sectionDescription")}
           </motion.p>
         </div>
 
         <div className="scroll-revealed grid gap-8 lg:grid-cols-3">
           {randomBlogs.map((blog: Blog) => (
             <motion.div
+              key={blog.id}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ translateY: -10 }}
@@ -78,9 +68,7 @@ const Blog = ({ blogs }) => {
                 type: "spring",
                 stiffness: 100,
                 delay: blog.id / 10,
-                translateY: { duration: 0.2 },
               }}
-              key={blog.id}
               className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl"
             >
               <div className="w-full h-48 relative overflow-hidden">
@@ -98,26 +86,27 @@ const Blog = ({ blogs }) => {
                 <p className="text-gray-600 text-sm">
                   {blog.excerpt
                     ? `${blog.excerpt.slice(0, 120)}...`
-                    : "Pas de contenu disponible..."}
+                    : t("blog.noContent")}
                 </p>
                 <a
                   href={`/blog/${blog.id}`}
                   className="flex gap-1 items-center text-blue-600 font-medium hover:text-blue-800"
                 >
                   <FaEye />
-                  <span>Show</span>
+                  <span>{t("blog.show")}</span>
                 </a>
               </div>
             </motion.div>
           ))}
         </div>
+
         <div className="flex justify-end py-8">
           <a
             href="#"
             className="px-4 py-2 bg-primary text-white rounded-md shadow-lg
-                   hover:scale-110 hover:text-white hover:-translate-y-1 transition-all duration-300 ease-in-out"
+                     hover:scale-110 hover:text-white hover:-translate-y-1 transition-all duration-300 ease-in-out"
           >
-            See more
+            {t("blog.seeMore")}
           </a>
         </div>
       </div>

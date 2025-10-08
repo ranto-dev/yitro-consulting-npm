@@ -18,5 +18,225 @@
       "start": "Commencer",
       "intro": "Vidéo intro"
     }
+  },
+  "about": {
+    "titleSmall": "À propos de nous",
+    "titleBig": "Notre équipe allie expérience et expertise",
+    "tabs": {
+      "profile": {
+        "label": "Notre Profil",
+        "content": [
+          "Yitro-Consulting est un cabinet de conseil pluridisciplinaire spécialisé en marketing digital, gestion du changement et développement web. Nous offrons un accompagnement de bout en bout pour aider les organisations à se développer, se transformer et se démarquer dans un environnement numérique compétitif. Nos services vont des audits stratégiques et du branding à l’e-learning et au développement d’applications sur mesure.",
+          "Notre force réside dans notre capacité à combiner stratégie, créativité et technologie pour fournir des solutions percutantes et mesurables. Soutenus par une équipe d’experts passionnés, nous livrons des stratégies sur mesure alignées sur vos objectifs et générant des résultats durables. De la startup à l’ONG, nous créons une réelle valeur digitale."
+        ]
+      },
+      "vision": {
+        "label": "Notre Vision",
+        "content": [
+          "Nous croyons que la transformation digitale ne concerne pas seulement la technologie — elle concerne les personnes, le sens et le progrès. Notre vision est de construire un avenir numérique plus inclusif et durable en aidant les organisations à croître avec intention et impact.",
+          "Chez Yitro-Consulting, nous imaginons un monde où l’innovation est au service de l’humanité. Grâce à notre approche intégrée, nous permettons à nos clients de diriger le changement, d’adopter l’agilité et de prendre des décisions audacieuses qui façonnent l’économie numérique de demain."
+        ]
+      },
+      "history": {
+        "label": "Notre Histoire",
+        "content": [
+          "Fondé par des acteurs du changement passionnés, Yitro-Consulting est né d'une idée audacieuse : créer un cabinet de conseil qui combine technologie, apprentissage et stratégie pour générer un impact significatif. Ce qui a commencé comme une petite équipe est devenu un écosystème numérique à part entière, au service de clients en Afrique, en Europe et en Amérique du Nord.",
+          "Au fil des ans, nous avons évolué avec le monde numérique, élargissant nos services pour relever les défis d’un paysage en constante mutation. Aujourd’hui, notre parcours continue — guidé par l’innovation, renforcé par nos valeurs et inspiré par chaque client que nous accompagnons."
+        ]
+      }
+    }
+  },
+  "services": {
+    "sectionTitleSmall": "Services",
+    "sectionTitleBig": "Nos meilleurs services",
+    "sectionDescription": "Il existe de nombreuses variantes de Lorem Ipsum, mais la plupart ont été modifiées d'une manière ou d'une autre.",
+    "list": [
+      {
+        "title": "Marketing Digital",
+        "description": "Nous concevons des stratégies marketing basées sur les données pour booster votre visibilité et attirer des prospects qualifiés. Du SEO aux publicités Google et réseaux sociaux, chaque campagne est adaptée à vos objectifs. Des résultats concrets, une croissance mesurable."
+      },
+      {
+        "title": "Développement Web & Mobile",
+        "description": "Nous créons des sites et des applications réactives et sécurisées, alignées sur votre vision. E-commerce, site vitrine ou app mobile, nous livrons des solutions performantes. Technologie intelligente, design élégant."
+      },
+      {
+        "title": "Transformation Digitale",
+        "description": "Nous vous accompagnons à chaque étape de votre transformation digitale, de l’audit à la mise en œuvre. Notre approche centrée sur l’humain assure une adoption fluide et un impact durable. Au-delà de la tech, un vrai changement de mentalité."
+      },
+      {
+        "title": "E-learning & Formation",
+        "description": "Avec Yitro Learning, nous proposons des formations percutantes basées sur les neurosciences et le storytelling. Apprenez plus vite, retenez plus longtemps. Un apprentissage flexible, un vrai changement."
+      },
+      {
+        "title": "Conseil & Gestion du Changement",
+        "description": "Nous vous aidons à conduire le changement avec clarté et confiance. Coaching, planification stratégique, accompagnement global. Une approche centrée sur l'humain, orientée résultats."
+      },
+      {
+        "title": "Conseil Juridique",
+        "description": "Nous offrons un accompagnement juridique expert pour naviguer les enjeux réglementaires, contractuels et de conformité. Création d’entreprise, audits de politique digitale… votre sécurité juridique, notre priorité."
+      }
+    ]
+  },
+  "introVideo": {
+    "sectionTitleSmall": "Vidéo d'introduction",
+    "sectionTitleBig": "Regardez notre vidéo d’introduction",
+    "sectionDescription": "Il existe de nombreuses variantes de Lorem Ipsum, mais la plupart ont été modifiées d'une manière ou d'une autre."
+  },
+  "portfolio": {
+    "sectionTitleSmall": "Portfolio",
+    "sectionTitleBig": "Nos Réalisations Récentes",
+    "sectionDescription": "Il existe de nombreuses variantes de Lorem Ipsum, mais la plupart ont été modifiées d'une manière ou d'une autre.",
+    "filters": {
+      "all": "Tous les projets",
+      "branding": "Identité",
+      "marketing": "Marketing",
+      "planning": "Planification",
+      "research": "Recherche"
+    },
+    "items": [
+      {
+        "title": "Design Graphique",
+        "description": "Brève description pour ceux qui recherchent quelque chose de nouveau. Génial !",
+        "filter": "branding"
+      },
+      {
+        "title": "Développement Web",
+        "description": "Brève description pour ceux qui recherchent quelque chose de nouveau. Génial !",
+        "filter": "planning"
+      },
+      {
+        "title": "Développement Mobile",
+        "description": "Brève description pour ceux qui recherchent quelque chose de nouveau. Génial !",
+        "filter": "marketing"
+      },
+      {
+        "title": "Marketing Digital",
+        "description": "Brève description pour ceux qui recherchent quelque chose de nouveau. Génial !",
+        "filter": "marketing"
+      },
+      {
+        "title": "Services SEO",
+        "description": "Brève description pour ceux qui recherchent quelque chose de nouveau. Génial !",
+        "filter": "marketing"
+      },
+      {
+        "title": "Design Produit",
+        "description": "Brève description pour ceux qui recherchent quelque chose de nouveau. Génial !",
+        "filter": "branding"
+      }
+    ]
+  },
+  "pricing": {
+    "sectionTitleSmall": "Tarifs",
+    "sectionTitleBig": "Tarification & Abonnements",
+    "sectionDescription": "Il existe de nombreuses variantes de Lorem Ipsum, mais la plupart ont été modifiées d'une manière ou d'une autre.",
+    "plans": [
+      {
+        "title": "Démarrage",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, similique ea.",
+        "price": "0",
+        "features": [
+          { "text": "Cras justo odio.", "included": true },
+          { "text": "Dapibus ac facilisis in.", "included": true },
+          { "text": "Morbi leo risus.", "included": false },
+          { "text": "Excepteur sint occaecat velit.", "included": false }
+        ],
+        "buttonText": "Commencer l’essai gratuit",
+        "exclusive": false
+      },
+      {
+        "title": "Exclusif",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, similique ea.",
+        "price": "99",
+        "features": [
+          { "text": "Cras justo odio.", "included": true },
+          { "text": "Dapibus ac facilisis in.", "included": true },
+          { "text": "Morbi leo risus.", "included": true },
+          { "text": "Excepteur sint occaecat velit.", "included": false }
+        ],
+        "buttonText": "Acheter maintenant",
+        "exclusive": true
+      },
+      {
+        "title": "Premium",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, similique ea.",
+        "price": "150",
+        "features": [
+          { "text": "Cras justo odio.", "included": true },
+          { "text": "Dapibus ac facilisis in.", "included": true },
+          { "text": "Morbi leo risus.", "included": true },
+          { "text": "Excepteur sint occaecat velit.", "included": true }
+        ],
+        "buttonText": "Acheter maintenant",
+        "exclusive": false
+      }
+    ]
+  },
+  "callToAction": {
+    "title": "Nous aimons créer des solutions parfaites pour votre entreprise",
+    "description": "Pourquoi je dis vieux copain, c’est fabuleux ce type complètement dingue, cor blimey les gars, agenouille-toi bobby, William soûl comme un cochon, cack Richard. Un gars qui traîne avec son sac banane, perdu sans le pilote, complètement fou.",
+    "button": "Commencer maintenant"
+  },
+  "team": {
+    "sectionTitleSmall": "Équipe",
+    "sectionTitleBig": "Notre équipe créative",
+    "sectionDescription": "Il existe de nombreuses variantes de Lorem Ipsum, mais la plupart ont été modifiées d'une manière ou d'une autre.",
+    "members": [
+      { "name": "Lai Yeves", "role": "Marketing digital" },
+      { "name": "Hasina", "role": "Support client (RH)" },
+      { "name": "Noella", "role": "Designer UI/UX" },
+      { "name": "Pricilla", "role": "Community Manager" },
+      { "name": "Harilala Louis", "role": "Expert SEO" },
+      { "name": "Edwino", "role": "Développeur" },
+      { "name": "Ranto", "role": "Développeur" },
+      { "name": "Achina", "role": "DevOps" }
+    ]
+  },
+  "blog": {
+    "sectionTitleSmall": "Blog",
+    "sectionTitleBig": "Dernières actualités",
+    "sectionDescription": "Il existe de nombreuses variantes de Lorem Ipsum, mais la plupart ont été modifiées d'une manière ou d'une autre.",
+    "show": "Voir",
+    "seeMore": "Voir plus",
+    "noContent": "Pas de contenu disponible..."
+  },
+  "contact": {
+    "sectionTitleSmall": "Contact",
+    "sectionTitleBig": "Nous contacter",
+    "sectionDescription": "Il existe de nombreuses variantes de Lorem Ipsum, mais la plupart ont été modifiées d'une manière ou d'une autre.",
+    "form": {
+      "name": "Votre nom",
+      "email": "Votre e-mail",
+      "subject": "Votre sujet",
+      "message": "Votre message",
+      "send": "Envoyer le message",
+      "success": "Email envoyé avec succès !",
+      "error": "Erreur lors de l’envoi."
+    },
+    "info": {
+      "title": "Nos informations",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "address": "Lot 1111-G305 Tsivatrinikamo, Antsirabe 110, Madagascar",
+      "email": "sk.yitro-consulting@gmail.com",
+      "phone": "+261 34 92 510 45 / +261 34 53 313 87"
+    }
+  },
+  "footer": {
+    "quickLinks": "Liens rapides",
+    "support": "Support",
+    "subscribe": "S'abonner",
+    "newsletter": "Recevez nos dernières nouvelles et mises à jour.",
+    "emailPlaceholder": "Votre email",
+    "copyright": "© 2025 Yitro Consulting. Tous droits réservés.",
+    "links": {
+      "about": "À propos",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "pricing": "Tarifs",
+      "contact": "Contact",
+      "help": "Centre d’aide",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d’utilisation"
+    }
   }
 }

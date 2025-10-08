@@ -1,52 +1,11 @@
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { motion } from "framer-motion";
-
-const pricingPlans = [
-  {
-    title: "Starter",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
-    price: "0",
-    features: [
-      { text: "Cras justo odio.", included: true },
-      { text: "Dapibus ac facilisis in.", included: true },
-      { text: "Morbi leo risus.", included: false },
-      { text: "Excepteur sint occaecat velit.", included: false },
-    ],
-    buttonText: "Start Free Trial",
-    isExclusive: false,
-  },
-  {
-    title: "Exclusive",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
-    price: "99",
-    features: [
-      { text: "Cras justo odio.", included: true },
-      { text: "Dapibus ac facilisis in.", included: true },
-      { text: "Morbi leo risus.", included: true },
-      { text: "Excepteur sint occaecat velit.", included: false },
-    ],
-    buttonText: "Purchase Now",
-    isExclusive: true,
-  },
-  {
-    title: "Premium",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, similique ea.",
-    price: "150",
-    features: [
-      { text: "Cras justo odio.", included: true },
-      { text: "Dapibus ac facilisis in.", included: true },
-      { text: "Morbi leo risus.", included: true },
-      { text: "Excepteur sint occaecat velit.", included: true },
-    ],
-    buttonText: "Purchase Now",
-    isExclusive: false,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Pricing = () => {
+  const { t } = useTranslation();
+  const pricingPlans: any[] = t("pricing.plans", { returnObjects: true });
+
   return (
     <section id="pricing" className="section-area overflow-hidden">
       <div className="container">
@@ -57,7 +16,7 @@ const Pricing = () => {
             transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
             className="mb-2 block text-lg font-semibold text-primary"
           >
-            Pricing
+            {t("pricing.sectionTitleSmall")}
           </motion.h6>
           <motion.h2
             initial={{ opacity: 0, y: -100 }}
@@ -65,47 +24,40 @@ const Pricing = () => {
             transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
             className="mb-6"
           >
-            Pricing & Plans
+            {t("pricing.sectionTitleBig")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
           >
-            There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form.
+            {t("pricing.sectionDescription")}
           </motion.p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {pricingPlans.map((plan, index) => (
             <motion.div
+              key={index}
               initial={{ opacity: 0, x: Math.random() > 0.5 ? -100 : 100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                delay: index / 5,
-              }}
-              key={index}
+              transition={{ type: "spring", stiffness: 100, delay: index / 5 }}
               className="scroll-revealed"
             >
               <div
-                className={`rounded-xl py-12 px-9 text-center shadow-card-1 hover:shadow-lg
-                  ${
-                    plan.isExclusive
-                      ? "bg-body-light-1 dark:bg-body-dark-12/10 shadow-lg"
-                      : "bg-body-light-1 dark:bg-body-dark-12/10"
-                  }`}
+                className={`rounded-xl py-12 px-9 text-center shadow-card-1 hover:shadow-lg ${
+                  plan.exclusive
+                    ? "bg-body-light-1 dark:bg-body-dark-12/10 shadow-lg"
+                    : "bg-body-light-1 dark:bg-body-dark-12/10"
+                }`}
               >
                 <div>
                   <h6
-                    className={`inline-block font-medium text-base mb-6 rounded-md py-2 px-8 pricing-title
-                      ${
-                        plan.isExclusive
-                          ? "bg-primary text-primary-color"
-                          : "bg-primary/10 text-primary"
-                      }`}
+                    className={`inline-block font-medium text-base mb-6 rounded-md py-2 px-8 pricing-title ${
+                      plan.exclusive
+                        ? "bg-primary text-primary-color"
+                        : "bg-primary/10 text-primary"
+                    }`}
                   >
                     {plan.title}
                   </h6>
@@ -125,20 +77,18 @@ const Pricing = () => {
                 <div className="pt-8 pb-10">
                   <a
                     href="javascript:void(0)"
-                    className={`inline-block font-medium px-6 py-3 rounded-md
-                      ${
-                        plan.isExclusive
-                          ? "bg-primary text-primary-color hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 hover:text-primary-color"
-                          : "bg-primary/10 text-primary hover:bg-primary hover:text-primary-color"
-                      }
-                      focus:bg-primary focus:text-primary-color`}
+                    className={`inline-block font-medium px-6 py-3 rounded-md ${
+                      plan.exclusive
+                        ? "bg-primary text-primary-color hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 hover:text-primary-color"
+                        : "bg-primary/10 text-primary hover:bg-primary hover:text-primary-color"
+                    } focus:bg-primary focus:text-primary-color`}
                   >
                     {plan.buttonText}
                   </a>
                 </div>
                 <div>
                   <ul>
-                    {plan.features.map((feature, idx) => (
+                    {plan.features.map((feature: any, idx: number) => (
                       <li
                         key={idx}
                         className="text-left relative mb-3 inline-flex gap-3 w-full"

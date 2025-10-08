@@ -1,62 +1,22 @@
 import { useState } from "react";
+import { FaLink, FaMagnifyingGlassPlus } from "react-icons/fa6";
+import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import portfolio1 from "../assets/img/portfolio/portfolio-1.jpg";
 import portfolio2 from "../assets/img/portfolio/portfolio-2.jpg";
 import portfolio3 from "../assets/img/portfolio/portfolio-3.jpg";
 import portfolio4 from "../assets/img/portfolio/portfolio-4.jpg";
 import portfolio5 from "../assets/img/portfolio/portfolio-5.jpg";
 import portfolio6 from "../assets/img/portfolio/portfolio-6.jpg";
-import { FaLink, FaMagnifyingGlassPlus } from "react-icons/fa6";
-import { AnimatePresence, motion } from "framer-motion";
 
-const portfolioItems = [
-  {
-    id: 1,
-    image: portfolio1,
-    title: "Graphics Design",
-    description:
-      "Short description for the ones who look for something new. Awesome!",
-    filter: "branding",
-  },
-  {
-    id: 2,
-    image: portfolio2,
-    title: "Web Development",
-    description:
-      "Short description for the ones who look for something new. Awesome!",
-    filter: "planning",
-  },
-  {
-    id: 3,
-    image: portfolio3,
-    title: "App Development",
-    description:
-      "Short description for the ones who look for something new. Awesome!",
-    filter: "marketing",
-  },
-  {
-    id: 4,
-    image: portfolio4,
-    title: "Digital Marketing",
-    description:
-      "Short description for the ones who look for something new. Awesome!!",
-    filter: "marketing",
-  },
-  {
-    id: 5,
-    image: portfolio5,
-    title: "SEO Services",
-    description:
-      "Short description for the ones who look for something new. Awesome!",
-    filter: "marketing",
-  },
-  {
-    id: 6,
-    image: portfolio6,
-    title: "Product Design",
-    description:
-      "Short description for the ones who look for something new. Awesome!",
-    filter: "branding",
-  },
+const portfolioImages = [
+  portfolio1,
+  portfolio2,
+  portfolio3,
+  portfolio4,
+  portfolio5,
+  portfolio6,
 ];
 
 const itemVariants = {
@@ -66,12 +26,17 @@ const itemVariants = {
 };
 
 const Portfolio = () => {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState("all");
+
+  const allItems: any[] = t("portfolio.items", { returnObjects: true });
 
   const filteredItems =
     activeFilter === "all"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.filter === activeFilter);
+      ? allItems
+      : allItems.filter((item) => item.filter === activeFilter);
+
+  const filters = ["all", "branding", "marketing", "planning", "research"];
 
   return (
     <section id="portfolio" className="section-area overflow-hidden">
@@ -83,7 +48,7 @@ const Portfolio = () => {
             transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
             className="mb-2 block text-lg font-semibold text-primary"
           >
-            Portfolio
+            {t("portfolio.sectionTitleSmall")}
           </motion.h6>
           <motion.h2
             initial={{ opacity: 0, y: -100 }}
@@ -91,44 +56,40 @@ const Portfolio = () => {
             transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
             className="mb-6"
           >
-            Our Recent Works
+            {t("portfolio.sectionTitleBig")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
           >
-            There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form.
+            {t("portfolio.sectionDescription")}
           </motion.p>
         </div>
+
         <motion.nav
-          className=" flex gap-2 flex-wrap justify-center items-center py-4"
+          className="flex gap-2 flex-wrap justify-center items-center py-4"
           aria-label="Portfolio filter"
         >
-          {["all", "branding", "marketing", "planning", "research"].map(
-            (filter) => (
-              <button
-                key={filter}
-                type="button"
-                className={`font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color ${
-                  activeFilter === filter ? "active" : ""
-                }`}
-                onClick={() => setActiveFilter(filter)}
-                data-filter={filter}
-              >
-                {filter === "all"
-                  ? "All Work"
-                  : filter.charAt(0).toUpperCase() + filter.slice(1)}
-              </button>
-            )
-          )}
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              type="button"
+              className={`font-semibold px-5 py-2 rounded-md text-body-light-11 dark:text-body-dark-11 hover:bg-primary hover:text-primary-color focus:bg-primary focus:text-primary-color ${
+                activeFilter === filter ? "active" : ""
+              }`}
+              onClick={() => setActiveFilter(filter)}
+            >
+              {t(`portfolio.filters.${filter}`)}
+            </button>
+          ))}
         </motion.nav>
+
         <motion.div className="row">
           <AnimatePresence>
-            {filteredItems.map((item) => (
+            {filteredItems.map((item, index) => (
               <motion.div
-                key={item.id}
+                key={index}
                 className="portfolio col-12 sm:col-6 lg:col-4"
                 variants={itemVariants}
                 initial="initial"
@@ -140,7 +101,7 @@ const Portfolio = () => {
                 <article className="group" data-filter={item.filter}>
                   <div className="relative overflow-hidden w-full aspect-[4/3] rounded-xl">
                     <img
-                      src={item.image}
+                      src={portfolioImages[index]}
                       alt={item.title}
                       className="w-full h-full object-cover"
                     />
@@ -148,8 +109,8 @@ const Portfolio = () => {
                       <div className="flex flex-wrap gap-2 p-4">
                         <div className="inline-block relative">
                           <a
-                            href={item.image}
-                            className="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center hover:bg-primary-light-10 hover:text-primary-color dark:hover:bg-primary-dark-10 dark:hover:text-primary-color focus:bg-primary-light-10 focus:text-primary-color dark:focus-bg-primary-dark-10 dark:focus-text-primary-color"
+                            href={portfolioImages[index]}
+                            className="portfolio-box text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg inline-flex items-center justify-center"
                           >
                             <FaMagnifyingGlassPlus />
                           </a>
@@ -157,7 +118,7 @@ const Portfolio = () => {
                         <div className="portfolio-icon">
                           <a
                             href="javascript:void(0)"
-                            className="text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg text-center inline-flex items-center justify-center hover:bg-primary-light-10 hover:text-primary-color dark:hover:bg-primary-dark-10 dark:hover:text-primary-color focus:bg-primary-light-10 focus:text-primary-color dark:focus-bg-primary-dark-10 dark:focus-text-primary-color"
+                            className="text-[1.75rem] text-primary-color bg-primary z-10 w-[60px] aspect-square rounded-lg inline-flex items-center justify-center"
                           >
                             <FaLink />
                           </a>
